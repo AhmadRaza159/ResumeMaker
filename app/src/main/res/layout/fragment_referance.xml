@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".referances.ReferanceFragment">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+
+            <EditText
+                android:id="@+id/referance_company"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:hint="Company Name" />
+
+            <EditText
+                android:id="@+id/referance_person"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/referance_company"
+                android:layout_marginTop="10dp"
+                android:hint="Person Name" />
+
+            <EditText
+                android:id="@+id/referance_phone"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/referance_person"
+                android:layout_marginTop="10dp"
+                android:hint="Phone No" />
+
+            <EditText
+                android:id="@+id/referance_gmail"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/referance_phone"
+                android:layout_marginTop="10dp"
+                android:hint="Gmail" />
+
+
+
+            <Button
+                android:id="@+id/save_from_referance"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/referance_gmail"
+                android:layout_marginTop="20dp"
+                android:text="Save" />
+
+
+        </RelativeLayout>
+
+    </ScrollView>
+
+</RelativeLayout>

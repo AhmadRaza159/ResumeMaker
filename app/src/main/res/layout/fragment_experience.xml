@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".experience.ExperienceFragment">
+
+   <ScrollView
+       android:layout_width="match_parent"
+       android:layout_height="match_parent">
+       <RelativeLayout
+           android:layout_width="match_parent"
+           android:layout_height="match_parent">
+
+
+           <EditText
+               android:id="@+id/experience_title"
+               android:layout_width="match_parent"
+               android:layout_height="wrap_content"
+               android:layout_marginTop="10dp"
+               android:hint="Title" />
+
+           <EditText
+               android:id="@+id/experience_company"
+               android:layout_width="match_parent"
+               android:layout_height="wrap_content"
+               android:layout_below="@+id/experience_title"
+               android:layout_marginTop="10dp"
+               android:hint="Company" />
+
+           <EditText
+               android:id="@+id/experience_city"
+               android:layout_width="match_parent"
+               android:layout_height="wrap_content"
+               android:layout_below="@+id/experience_company"
+               android:layout_marginTop="10dp"
+               android:hint="City" />
+
+           <EditText
+               android:id="@+id/experience_start_date"
+               android:layout_width="match_parent"
+               android:layout_height="wrap_content"
+               android:layout_below="@+id/experience_city"
+               android:layout_marginTop="10dp"
+               android:hint="Start Date" />
+
+           <EditText
+               android:id="@+id/experience_end_date"
+               android:layout_width="match_parent"
+               android:layout_height="wrap_content"
+               android:layout_below="@+id/experience_start_date"
+               android:layout_marginTop="10dp"
+               android:hint="Phone No" />
+
+           <EditText
+               android:id="@+id/experience_detail"
+               android:layout_width="match_parent"
+               android:layout_height="wrap_content"
+               android:layout_below="@id/experience_end_date"
+               android:layout_marginTop="10dp"
+               android:hint="Details" />
+
+
+
+           <Button
+               android:id="@+id/save_and_next_from_experience"
+               android:layout_width="wrap_content"
+               android:layout_height="wrap_content"
+               android:layout_below="@+id/experience_detail"
+               android:layout_marginTop="20dp"
+               android:text="Save and Next" />
+
+
+
+       </RelativeLayout>
+   </ScrollView>
+
+</RelativeLayout>
