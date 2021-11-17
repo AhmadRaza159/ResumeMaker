@@ -69,6 +69,12 @@
                android:layout_below="@+id/experience_detail"
                android:layout_marginTop="20dp"
                android:text="Save and Next" />
+           <Button
+               android:id="@+id/experience_add_more"
+               android:layout_width="wrap_content"
+               android:layout_height="wrap_content"
+               android:layout_below="@id/save_and_next_from_experience"
+               android:text="Add More"/>
 
 
 

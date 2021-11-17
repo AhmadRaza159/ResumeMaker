@@ -54,6 +54,13 @@
                 android:layout_below="@+id/referance_gmail"
                 android:layout_marginTop="20dp"
                 android:text="Save" />
+            <Button
+                android:id="@+id/referance_add_more"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/save_from_referance"
+                android:layout_marginTop="20dp"
+                android:text="Add More" />
 
 
         </RelativeLayout>

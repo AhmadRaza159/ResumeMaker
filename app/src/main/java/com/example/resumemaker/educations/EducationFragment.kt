@@ -36,7 +36,8 @@ class EducationFragment : Fragment() {
     private lateinit var endDateEt: EditText
     private lateinit var detailsEt: EditText
     private lateinit var save: Button
-    private var educationDetails:String=""
+    private lateinit var addMore: Button
+    private var educationDetails: String = ""
 
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -52,48 +53,55 @@ class EducationFragment : Fragment() {
         savedInstanceState: Bundle?
     ): View? {
         // Inflate the layout for this fragment
-        var v:View= inflater.inflate(R.layout.fragment_education, container, false)
+        var v: View = inflater.inflate(R.layout.fragment_education, container, false)
         findIds(v)
         factory()
         return v
     }
 
     private fun factory() {
-        save.setOnClickListener{
-            if(TextUtils.isEmpty(schoolEt.text.toString())){
-                Toast.makeText(context,"School Name should not be empty", Toast.LENGTH_SHORT).show()
+        save.setOnClickListener {
+            if (TextUtils.isEmpty(schoolEt.text.toString())) {
+                Toast.makeText(context, "School Name should not be empty", Toast.LENGTH_SHORT)
+                    .show()
                 return@setOnClickListener
             }
-            if(TextUtils.isEmpty(degreeEt.text.toString())){
-                Toast.makeText(context,"Degree title should not be empty", Toast.LENGTH_SHORT).show()
+            if (TextUtils.isEmpty(degreeEt.text.toString())) {
+                Toast.makeText(context, "Degree title should not be empty", Toast.LENGTH_SHORT)
+                    .show()
                 return@setOnClickListener
             }
-            if(TextUtils.isEmpty(cityEt.text.toString())){
-                Toast.makeText(context,"City name should not be empty", Toast.LENGTH_SHORT).show()
+            if (TextUtils.isEmpty(cityEt.text.toString())) {
+                Toast.makeText(context, "City name should not be empty", Toast.LENGTH_SHORT).show()
                 return@setOnClickListener
             }
-            if(TextUtils.isEmpty(startDateEt.text.toString())){
-                Toast.makeText(context,"Start date should not be empty", Toast.LENGTH_SHORT).show()
+            if (TextUtils.isEmpty(startDateEt.text.toString())) {
+                Toast.makeText(context, "Start date should not be empty", Toast.LENGTH_SHORT).show()
                 return@setOnClickListener
             }
-            if(TextUtils.isEmpty(endDateEt.text.toString())){
-                Toast.makeText(context,"End date should not be empty", Toast.LENGTH_SHORT).show()
+            if (TextUtils.isEmpty(endDateEt.text.toString())) {
+                Toast.makeText(context, "End date should not be empty", Toast.LENGTH_SHORT).show()
                 return@setOnClickListener
-            }
-            else{
-                if(TextUtils.isEmpty(detailsEt.text.toString())){
-                    educationDetails="empty"
+            } else {
+                if (TextUtils.isEmpty(detailsEt.text.toString())) {
+                    educationDetails = "empty"
+                } else {
+                    educationDetails = detailsEt.text.toString()
                 }
-                else{
-                    educationDetails=detailsEt.text.toString()
-                }
-                if (param1!=null){
-                    var education= Education(0,schoolEt.text.toString(),degreeEt.text.toString(),startDateEt.text.toString(),endDateEt.text.toString(),educationDetails,cityEt.text.toString(),
+                if (param1 != null) {
+                    var education = Education(
+                        0,
+                        schoolEt.text.toString(),
+                        degreeEt.text.toString(),
+                        startDateEt.text.toString(),
+                        endDateEt.text.toString(),
+                        educationDetails,
+                        cityEt.text.toString(),
                         param1!!
                     )
                     educationViewModelForWriting.addEducation(education)
-                    Toast.makeText(context,"Successfully added", Toast.LENGTH_SHORT).show()
-                    var fragment= ProjectFragment.newInstance(param1!!)
+                    Toast.makeText(context, "Successfully added", Toast.LENGTH_SHORT).show()
+                    var fragment = ProjectFragment.newInstance(param1!!)
                     requireActivity().supportFragmentManager.beginTransaction()
                         .replace(R.id.add_new_resume_host, fragment).commit()
 
@@ -102,17 +110,76 @@ class EducationFragment : Fragment() {
 
             }
         }
+
+        addMore.setOnClickListener {
+
+            if (TextUtils.isEmpty(schoolEt.text.toString())) {
+                Toast.makeText(context, "School Name should not be empty", Toast.LENGTH_SHORT)
+                    .show()
+                return@setOnClickListener
+            }
+            if (TextUtils.isEmpty(degreeEt.text.toString())) {
+                Toast.makeText(context, "Degree title should not be empty", Toast.LENGTH_SHORT)
+                    .show()
+                return@setOnClickListener
+            }
+            if (TextUtils.isEmpty(cityEt.text.toString())) {
+                Toast.makeText(context, "City name should not be empty", Toast.LENGTH_SHORT).show()
+                return@setOnClickListener
+            }
+            if (TextUtils.isEmpty(startDateEt.text.toString())) {
+                Toast.makeText(context, "Start date should not be empty", Toast.LENGTH_SHORT).show()
+                return@setOnClickListener
+            }
+            if (TextUtils.isEmpty(endDateEt.text.toString())) {
+                Toast.makeText(context, "End date should not be empty", Toast.LENGTH_SHORT).show()
+                return@setOnClickListener
+            } else {
+                if (TextUtils.isEmpty(detailsEt.text.toString())) {
+                    educationDetails = "empty"
+                } else {
+                    educationDetails = detailsEt.text.toString()
+                }
+                if (param1 != null) {
+                    var education = Education(
+                        0,
+                        schoolEt.text.toString(),
+                        degreeEt.text.toString(),
+                        startDateEt.text.toString(),
+                        endDateEt.text.toString(),
+                        educationDetails,
+                        cityEt.text.toString(),
+                        param1!!
+                    )
+                    educationViewModelForWriting.addEducation(education)
+                    Toast.makeText(context, "Successfully added", Toast.LENGTH_SHORT).show()
+                   schoolEt.setText("")
+                    degreeEt.setText("")
+                    cityEt.setText("")
+                    startDateEt.setText("")
+                    endDateEt.setText("")
+                    detailsEt.setText("")
+
+
+                }
+
+
+            }
+
+        }
     }
 
     private fun findIds(v: View) {
-        schoolEt=v.findViewById(R.id.education_school)
-        degreeEt=v.findViewById(R.id.education_degree)
-        cityEt=v.findViewById(R.id.education_city)
-        startDateEt=v.findViewById(R.id.education_start_date)
-        endDateEt=v.findViewById(R.id.education_end_date)
-        detailsEt=v.findViewById(R.id.education_details)
-        save=v.findViewById(R.id.save_and_next_from_education)
-        educationViewModelForWriting= ViewModelProvider(this).get(EducationViewModelForWriting::class.java)
+        schoolEt = v.findViewById(R.id.education_school)
+        degreeEt = v.findViewById(R.id.education_degree)
+        cityEt = v.findViewById(R.id.education_city)
+        startDateEt = v.findViewById(R.id.education_start_date)
+        endDateEt = v.findViewById(R.id.education_end_date)
+        detailsEt = v.findViewById(R.id.education_details)
+        save = v.findViewById(R.id.save_and_next_from_education)
+        addMore = v.findViewById(R.id.education_add_more)
+        educationViewModelForWriting =
+            ViewModelProvider(this).get(EducationViewModelForWriting::class.java)
 
     }
 

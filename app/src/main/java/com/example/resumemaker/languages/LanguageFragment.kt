@@ -11,6 +11,7 @@ import android.widget.EditText
 import android.widget.Toast
 import androidx.lifecycle.ViewModelProvider
 import com.example.resumemaker.R
+import com.example.resumemaker.hobbies.HobbyFragment
 import com.example.resumemaker.referances.ReferanceFragment
 
 // TODO: Rename parameter arguments, choose names that match
@@ -30,6 +31,7 @@ class LanguageFragment : Fragment() {
     private lateinit var levelEt: EditText
 
     private lateinit var save: Button
+    private lateinit var addMoree: Button
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -68,7 +70,7 @@ class LanguageFragment : Fragment() {
                     )
                     languageViewModelForWriting.addLanguage(language)
                     Toast.makeText(context,"Successfully added", Toast.LENGTH_SHORT).show()
-                    var fragment= ReferanceFragment.newInstance(param1!!)
+                    var fragment= HobbyFragment.newInstance(param1!!)
                     requireActivity().supportFragmentManager.beginTransaction()
                         .replace(R.id.add_new_resume_host, fragment).commit()
                 }
@@ -77,13 +79,37 @@ class LanguageFragment : Fragment() {
 
 
         }
+
+        addMoree.setOnClickListener{
+            if(TextUtils.isEmpty(languageEt.text.toString())){
+                Toast.makeText(context,"Language title should not be empty", Toast.LENGTH_SHORT).show()
+                return@setOnClickListener
+
+            }
+            if(TextUtils.isEmpty(levelEt.text.toString())){
+                Toast.makeText(context,"Language level should not be empty", Toast.LENGTH_SHORT).show()
+                return@setOnClickListener
+            }
+            else{
+                if(param1!=null){
+                    var language= Language(0,languageEt.text.toString(),levelEt.text.toString(),
+                        param1!!
+                    )
+                    languageViewModelForWriting.addLanguage(language)
+                    Toast.makeText(context,"Successfully added", Toast.LENGTH_SHORT).show()
+                   languageEt.setText("")
+                    levelEt.setText("")
+                }
+
+            }
+        }
     }
 
     private fun findIds(v: View) {
         languageEt =v.findViewById(R.id.lang_title)
         levelEt =v.findViewById(R.id.lang_level)
         save=v.findViewById(R.id.save_and_next_from_language)
-
+        addMoree=v.findViewById(R.id.language_add_more)
         languageViewModelForWriting = ViewModelProvider(this).get(LanguageViewModelForWriting::class.java)
     }
 

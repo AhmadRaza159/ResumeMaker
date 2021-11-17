@@ -28,13 +28,14 @@ class ExperienceFragment : Fragment() {
     private var param1: String? = null
 
     private lateinit var experienceViewModelForWriting: ExperienceViewModelForWriting
+    private lateinit var save: Button
+    private lateinit var addMore: Button
     private lateinit var titleEt: EditText
     private lateinit var companyEt: EditText
     private lateinit var startDateEt: EditText
     private lateinit var endDateEt: EditText
     private lateinit var detailsEt: EditText
     private lateinit var cityEt: EditText
-    private lateinit var save: Button
     private var companyDetails:String=""
 
 
@@ -96,14 +97,54 @@ class ExperienceFragment : Fragment() {
                     requireActivity().supportFragmentManager.beginTransaction()
                         .replace(R.id.add_new_resume_host, fragment).commit()
                 }
-
             }
-
-
+        }
+        addMore.setOnClickListener{
+            if(TextUtils.isEmpty(titleEt.text.toString())){
+                Toast.makeText(context,"Title should not be empty",Toast.LENGTH_SHORT).show()
+                return@setOnClickListener
+            }
+            if(TextUtils.isEmpty(companyEt.text.toString())){
+                Toast.makeText(context,"Company Name should not be empty",Toast.LENGTH_SHORT).show()
+                return@setOnClickListener
+            }
+            if(TextUtils.isEmpty(cityEt.text.toString())){
+                Toast.makeText(context,"City Name should not be empty",Toast.LENGTH_SHORT).show()
+                return@setOnClickListener
+            }
+            if(TextUtils.isEmpty(startDateEt.text.toString())){
+                Toast.makeText(context,"Start Date should not be empty",Toast.LENGTH_SHORT).show()
+                return@setOnClickListener
+            }
+            if(TextUtils.isEmpty(endDateEt.text.toString())){
+                Toast.makeText(context,"End Date should not be empty",Toast.LENGTH_SHORT).show()
+                return@setOnClickListener
+            }
+            else{
+                if(TextUtils.isEmpty(detailsEt.text.toString())){
+                    companyDetails="empty"
+                }
+                else{
+                    companyDetails=detailsEt.text.toString()
+                }
+                if(param1!=null){
+                    var experience= Experience(0,titleEt.text.toString(),companyEt.text.toString(),cityEt.text.toString(),startDateEt.text.toString(),endDateEt.text.toString(),companyDetails,
+                        param1!!
+                    )
+                    experienceViewModelForWriting.addExperience(experience)
+                    Toast.makeText(context,"Successfully added", Toast.LENGTH_SHORT).show()
+                    titleEt.setText("")
+                    companyEt.setText("")
+                    cityEt.setText("")
+                    startDateEt.setText("")
+                    endDateEt.setText("")
+                    detailsEt.setText("")
+                }
+            }
         }
     }
-
     private fun findIds(v: View) {
+        addMore=v.findViewById(R.id.experience_add_more)
         titleEt =v.findViewById(R.id.experience_title)
         companyEt =v.findViewById(R.id.experience_company)
         cityEt =v.findViewById(R.id.experience_city)
@@ -113,9 +154,7 @@ class ExperienceFragment : Fragment() {
         save=v.findViewById(R.id.save_and_next_from_experience)
         experienceViewModelForWriting = ViewModelProvider(this).get(ExperienceViewModelForWriting::class.java)
     }
-
     companion object {
-
         // TODO: Rename and change types and number of parameters
         @JvmStatic
         fun newInstance(param1: String) =

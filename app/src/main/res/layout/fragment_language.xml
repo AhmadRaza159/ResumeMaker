@@ -38,6 +38,14 @@
                 android:layout_marginTop="20dp"
                 android:text="Save and Next" />
 
+            <Button
+                android:id="@+id/language_add_more"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/save_and_next_from_language"
+                android:layout_marginTop="20dp"
+                android:text="Add More" />
+
 
         </RelativeLayout>
 

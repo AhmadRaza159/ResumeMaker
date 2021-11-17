@@ -2,53 +2,44 @@
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
-
+    android:layout_height="match_parent"
+    tools:context=".experience.ExperienceFragment">
 
     <ScrollView
         android:layout_width="match_parent"
         android:layout_height="match_parent">
-
         <RelativeLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent">
 
 
             <EditText
-                android:id="@+id/project_title"
+                android:id="@+id/hobby_title"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="10dp"
-                android:hint="Title" />
+                android:hint="Hobby" />
 
-            <EditText
-                android:id="@+id/project_details"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_below="@+id/project_title"
-                android:layout_marginTop="10dp"
-                android:hint="Details" />
+
 
 
             <Button
-                android:id="@+id/save_and_next_from_project"
+                android:id="@+id/save_and_next_from_hobby"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_below="@+id/project_details"
+                android:layout_below="@+id/hobby_title"
                 android:layout_marginTop="20dp"
                 android:text="Save and Next" />
             <Button
-                android:id="@+id/project_add_more"
+                android:id="@+id/hobby_add_more"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_below="@+id/save_and_next_from_project"
-                android:layout_marginTop="20dp"
-                android:text="Save and Next" />
+                android:layout_below="@id/save_and_next_from_hobby"
+                android:text="Add More"/>
+
 
 
         </RelativeLayout>
-
     </ScrollView>
-
 
 </RelativeLayout>

@@ -30,6 +30,7 @@ class AchivementFragment : Fragment() {
     private lateinit var detailsEt: EditText
 
     private lateinit var save: Button
+    private lateinit var addMore: Button
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -78,9 +79,33 @@ class AchivementFragment : Fragment() {
 
 
         }
+
+        addMore.setOnClickListener{
+            if(TextUtils.isEmpty(titleEt.text.toString())){
+                Toast.makeText(context,"Title should not be empty", Toast.LENGTH_SHORT).show()
+                return@setOnClickListener
+            }
+            if(TextUtils.isEmpty(detailsEt.text.toString())){
+                Toast.makeText(context,"Project Details should not be empty", Toast.LENGTH_SHORT).show()
+                return@setOnClickListener
+            }
+            else{
+                if(param1!=null){
+                    var achivement= Achivement(0,titleEt.text.toString(),detailsEt.text.toString(),
+                        param1!!
+                    )
+                    achivementViewModelForWriting.addAchivement(achivement)
+                    Toast.makeText(context,"Successfully added", Toast.LENGTH_SHORT).show()
+                    titleEt.setText("")
+                    detailsEt.setText("")
+                }
+
+            }
+        }
     }
 
     private fun findIds(v: View) {
+        addMore=v.findViewById(R.id.achivement_add_more)
         titleEt =v.findViewById(R.id.achivement_title)
         detailsEt =v.findViewById(R.id.achivement_details)
         save=v.findViewById(R.id.save_and_next_from_achivement)

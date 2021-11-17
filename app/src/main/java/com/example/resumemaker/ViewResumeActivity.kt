@@ -1,51 +1,58 @@
 package com.example.resumemaker
 
+import android.content.Context
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.print.PrintAttributes
+import android.print.PrintManager
+import android.view.View
+import android.webkit.WebView
 import android.widget.Button
-import com.example.resumemaker.achivements.Achivement
-import com.example.resumemaker.educations.Education
-import com.example.resumemaker.experience.Experience
-import com.example.resumemaker.languages.Language
-import com.example.resumemaker.objectives.Objective
 import com.example.resumemaker.profile.BasicInfo
-import com.example.resumemaker.projects.Project
-import com.example.resumemaker.referances.Referance
-import com.example.resumemaker.skills.Skill
 
 class ViewResumeActivity : AppCompatActivity() {
-    lateinit var template1:Button
+    lateinit var webView: WebView
+    lateinit var genratePdfButton: Button
+    var param1:String=""
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_view_resume)
-
+        setContentView(R.layout.activity_view_resume2)
+        param1 = intent.getStringExtra("html")!!
         findIds()
+        factory()
+    }
 
-        val basicInfo = intent.getParcelableExtra<BasicInfo>("basicinfo")
-        val objective=intent.getParcelableArrayListExtra<Objective>("objective")
-        val experience=intent.getParcelableArrayListExtra<Experience>("experience")
-        val skill=intent.getParcelableArrayListExtra<Skill>("skill")
-        val education=intent.getParcelableArrayListExtra<Education>("education")
-        val project=intent.getParcelableArrayListExtra<Project>("project")
-        val achivement=intent.getParcelableArrayListExtra<Achivement>("achivement")
-        val language=intent.getParcelableArrayListExtra<Language>("language")
-        val referance=intent.getParcelableArrayListExtra<Referance>("referance")
 
-        println("Its second activity, ")
-        println(basicInfo)
-        if (objective != null&&experience != null&&skill != null&&education != null&&project != null&&achivement != null&&language != null&&referance!=null) {
-            println(objective)
-            println(experience)
-            println(skill)
-            println(education)
-            println(project)
-            println(achivement)
-            println(language)
-            println(referance)
+    private fun factory() {
+        webView.loadDataWithBaseURL(null, param1, "text/HTML", "UTF-8", null)
+        webView.getSettings().setLoadWithOverviewMode(true);
+        webView.getSettings().setUseWideViewPort(true);
+
+        genratePdfButton.setOnClickListener{
+            (getSystemService(Context.PRINT_SERVICE) as? PrintManager)?.let { printManager ->
+
+                val jobName = "${getString(R.string.app_name)} Document"
+
+                // Get a print adapter instance
+                val printAdapter = webView.createPrintDocumentAdapter(jobName)
+
+                // Create a print job with name and adapter instance
+                printManager.print(
+                    jobName,
+                    printAdapter,
+                    PrintAttributes.Builder().build()
+                ).also { printJob ->
+
+                    // Save the job object for later status checking
+                    //printJobs += printJob
+                }
+            }
         }
     }
 
     private fun findIds() {
-        template1=findViewById(R.id.view_resume_template1)
+        genratePdfButton=findViewById(R.id.genrate_resume_pdf_button)
+        webView=findViewById(R.id.web_view_of_resume)
     }
 }

@@ -11,6 +11,9 @@
         android:theme="@style/Theme.ResumeMaker">
         <activity
             android:name=".ViewResumeActivity"
+            android:exported="true" />
+        <activity
+            android:name=".ViewTemplatesActivity"
             android:exported="true"
             android:label="@string/title_activity_view_resume"
             android:theme="@style/Theme.ResumeMaker.NoActionBar" />

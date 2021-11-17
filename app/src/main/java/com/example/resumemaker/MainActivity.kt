@@ -18,6 +18,8 @@ import com.example.resumemaker.educations.EducationViewModelForWriting
 import com.example.resumemaker.experience.Experience
 import com.example.resumemaker.experience.ExperienceViewModelForReading
 import com.example.resumemaker.experience.ExperienceViewModelForWriting
+import com.example.resumemaker.hobbies.Hobby
+import com.example.resumemaker.hobbies.HobbyViewModel
 import com.example.resumemaker.languages.Language
 import com.example.resumemaker.languages.LanguageViewModelForReading
 import com.example.resumemaker.languages.LanguageViewModelForWriting
@@ -57,6 +59,8 @@ class MainActivity : AppCompatActivity() {
     private lateinit var experienceViewModelForWriting: ExperienceViewModelForWriting
     private lateinit var objectiveViewModelForWriting: ObjectiveViewModelForWriting
 
+    private lateinit var hobbyViewModel: HobbyViewModel
+
     lateinit var adapter:ProfileAdapter
 
     lateinit var addProfileButton:FloatingActionButton
@@ -92,6 +96,7 @@ class MainActivity : AppCompatActivity() {
                     var listOfAchivementsObj=ArrayList<Achivement>()
                     var listOfLanguagesObj=ArrayList<Language>()
                     var listOfReferancesObj=ArrayList<Referance>()
+                    var listOfHobbiesObj=ArrayList<Hobby>()
 
                     reInitializeViewModels(obj1.id)
                     objectiveViewModelForReading.readAllData.observe(this@MainActivity,Observer{ obj->
@@ -126,19 +131,26 @@ class MainActivity : AppCompatActivity() {
                                                     for(i in obj){
                                                         listOfReferancesObj.add(i)
                                                     }
-                                                    var intent=Intent(this@MainActivity, ViewResumeActivity::class.java)
-                                                    println("ist ${listOfExperiencesObj.size}")
-                                                    intent.putExtra("basicinfo",obj1)
-                                                    intent.putExtra("objective",listOfObjectivesObj)
-                                                    intent.putExtra("experience", listOfExperiencesObj)
-                                                    intent.putExtra("skill", listOfSkillsObj)
-                                                    intent.putExtra("education", listOfEducationsObj)
-                                                    intent.putExtra("project", listOfProjectsObj)
-                                                    intent.putExtra("achivement",listOfAchivementsObj)
-                                                    intent.putExtra("language",listOfLanguagesObj)
-                                                    intent.putExtra("referance",listOfReferancesObj)
+                                                    hobbyViewModel.getSpecificObj(obj1.id).observe(this@MainActivity,
+                                                        Observer { obj->
+                                                            for (i in obj){
+                                                                listOfHobbiesObj.add(i)
+                                                            }
+                                                            var intent=Intent(this@MainActivity, ViewTemplatesActivity::class.java)
+                                                            println("ist ${listOfExperiencesObj.size}")
+                                                            intent.putExtra("basicinfo",obj1)
+                                                            intent.putExtra("objective",listOfObjectivesObj)
+                                                            intent.putExtra("experience", listOfExperiencesObj)
+                                                            intent.putExtra("skill", listOfSkillsObj)
+                                                            intent.putExtra("education", listOfEducationsObj)
+                                                            intent.putExtra("project", listOfProjectsObj)
+                                                            intent.putExtra("achivement",listOfAchivementsObj)
+                                                            intent.putExtra("language",listOfLanguagesObj)
+                                                            intent.putExtra("hobby",listOfHobbiesObj)
+                                                            intent.putExtra("referance",listOfReferancesObj)
 
-                                                    startActivity(intent)
+                                                            startActivity(intent)
+                                                        })
 
                                                 })
 
@@ -184,6 +196,12 @@ class MainActivity : AppCompatActivity() {
                             referanceViewModelForWriting.deleteReferance(i)
                         }
 
+                    })
+
+                    hobbyViewModel.getSpecificObj(obj.id).observe(this@MainActivity, Observer { obj->
+                        for (i in obj){
+                            hobbyViewModel.deleteData(i)
+                        }
                     })
 
                     languageViewModelForReading.readAllData.observe(this@MainActivity,Observer{ obj->
@@ -264,7 +282,7 @@ class MainActivity : AppCompatActivity() {
         experienceViewModelForWriting= ViewModelProvider(this).get(ExperienceViewModelForWriting::class.java)
         objectiveViewModelForWriting= ViewModelProvider(this).get(ObjectiveViewModelForWriting::class.java)
         referanceViewModelForWriting= ViewModelProvider(this).get(ReferanceViewModelForWriting::class.java)
-
+        hobbyViewModel= ViewModelProvider(this).get(HobbyViewModel::class.java)
         //objectiveViewModel= ViewModelProvider(this).get(ObjectiveViewModel::class.java)
 
 

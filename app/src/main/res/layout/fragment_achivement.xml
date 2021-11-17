@@ -37,6 +37,13 @@
                 android:layout_below="@+id/achivement_details"
                 android:layout_marginTop="20dp"
                 android:text="Save and Next" />
+            <Button
+                android:id="@+id/achivement_add_more"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/save_and_next_from_achivement"
+                android:layout_marginTop="20dp"
+                android:text="Add More" />
 
 
         </RelativeLayout>

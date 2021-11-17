@@ -1,0 +1,578 @@
+.websiteBody{
+  margin: 0;
+}.Page{
+  display:block;
+  margin:auto;
+  width:100%;
+  height:auto;
+  pointer-events:auto;
+}
+.Page-outer{
+  pointer-events:none;
+  z-index:1;
+}
+.Frame{
+  position:relative;
+  z-index:2;
+  pointer-events:none;
+  width:100%;
+  margin-left:0;
+  height:842px;
+  min-width:200px;
+  max-width:595px;
+  margin:auto;
+  background-color:rgba(255, 255, 255, 1);
+  overflow:hidden;
+}
+.Frame-outer{
+  pointer-events:none;
+  z-index:2;
+}
+.Rectangle-1{
+  position:relative;
+  z-index:3;
+  pointer-events:none;
+  margin-left:0px;
+  width:595px;
+  min-width:595px;
+  height:237px;
+  margin-top:0px;
+  margin-bottom:605px;
+  min-height:237px;
+  background-color:rgba(84, 237, 247, 1);
+}
+.Rectangle-1-outer{
+  pointer-events:none;
+  z-index:3;
+  position:relative;
+  display:flex;
+}
+.Group-1{
+  position:relative;
+  z-index:5;
+  pointer-events:none;
+  margin-left:32px;
+  width:133px;
+  min-width:133px;
+  height:131px;
+  margin-top:-819px;
+  margin-bottom:688px;
+  min-height:131px;
+  content:url(assets/images/Group_1.png);
+}
+.Group-1-outer{
+  pointer-events:none;
+  z-index:5;
+  position:relative;
+  display:flex;
+}
+.Personal-Summory{
+  position:relative;
+  z-index:4;
+  pointer-events:none;
+  margin-left:238px;
+  width:137px;
+  min-width:137px;
+  margin-top:-755px;
+  margin-bottom:736px;
+  min-height:19px;
+  text-align:left;
+  display:flex;
+  flex-direction:column;
+  justify-content:flex-start;
+  color:rgba(0, 0, 0, 1);
+  font-style:normal;
+  font-family:Roboto;
+  font-weight:500;
+  font-size:16px;
+  line-height:19px;
+}
+.Personal-Summory-outer{
+  pointer-events:none;
+  z-index:4;
+  position:relative;
+  display:flex;
+}
+.It-is-a-long-establi{
+  position:relative;
+  z-index:26;
+  pointer-events:none;
+  margin-left:238px;
+  width:318px;
+  min-width:318px;
+  margin-top:-724px;
+  margin-bottom:647px;
+  min-height:77px;
+  text-align:left;
+  display:flex;
+  flex-direction:column;
+  justify-content:flex-start;
+  color:rgba(0, 0, 0, 1);
+  font-style:normal;
+  font-family:Roboto;
+  font-weight:400;
+  font-size:12px;
+  line-height:14px;
+}
+.It-is-a-long-establi-outer{
+  pointer-events:none;
+  z-index:26;
+  position:relative;
+  display:flex;
+}
+.Agenlina-Julie{
+  position:relative;
+  z-index:6;
+  pointer-events:none;
+  margin-left:43px;
+  width:122px;
+  min-width:122px;
+  margin-top:-677px;
+  margin-bottom:658px;
+  min-height:19px;
+  text-align:left;
+  display:flex;
+  flex-direction:column;
+  justify-content:flex-start;
+  color:rgba(0, 0, 0, 1);
+  font-style:normal;
+  font-family:Roboto;
+  font-weight:500;
+  font-size:18px;
+  line-height:22px;
+}
+.Agenlina-Julie-outer{
+  pointer-events:none;
+  z-index:6;
+  position:relative;
+  display:flex;
+}
+.Agenlinajulie-gmail-{
+  position:relative;
+  z-index:7;
+  pointer-events:none;
+  margin-left:43px;
+  width:248px;
+  min-width:248px;
+  margin-top:-647px;
+  margin-bottom:628px;
+  min-height:19px;
+  text-align:left;
+  display:flex;
+  flex-direction:column;
+  justify-content:flex-start;
+  color:rgba(96, 73, 73, 1);
+  font-style:normal;
+  font-family:Roboto;
+  font-weight:400;
+  font-size:12px;
+  line-height:14px;
+}
+.Agenlinajulie-gmail--outer{
+  pointer-events:none;
+  z-index:7;
+  position:relative;
+  display:flex;
+}
+.Skills{
+  position:relative;
+  z-index:21;
+  pointer-events:none;
+  margin-left:14px;
+  width:560px;
+  min-width:560px;
+  height:100px;
+  margin-top:-568px;
+  margin-bottom:468px;
+  min-height:100px;
+  overflow:hidden;
+}
+.Skills-outer{
+  pointer-events:none;
+  z-index:21;
+  position:relative;
+  display:flex;
+}
+.Experiance{
+  position:relative;
+  z-index:22;
+  pointer-events:none;
+  margin-left:12px;
+  width:225px;
+  min-width:225px;
+  height:45px;
+  margin-top:10px;
+  margin-bottom:45px;
+  min-height:45px;
+}
+.Experiance-outer{
+  pointer-events:none;
+  z-index:22;
+  position:relative;
+  display:flex;
+}
+.Skills-1{
+  position:relative;
+  z-index:24;
+  pointer-events:none;
+  margin-left:18px;
+  width:39px;
+  min-width:39px;
+  margin-top:0px;
+  margin-bottom:26px;
+  min-height:19px;
+  text-align:left;
+  display:flex;
+  flex-direction:column;
+  justify-content:flex-start;
+  color:rgba(0, 0, 0, 1);
+  font-style:normal;
+  font-family:Roboto;
+  font-weight:500;
+  font-size:16px;
+  line-height:19px;
+}
+.Skills-1-outer{
+  pointer-events:none;
+  z-index:24;
+  position:relative;
+  display:flex;
+}
+.Ellipse-2{
+  position:relative;
+  z-index:23;
+  pointer-events:none;
+  margin-left:0px;
+  width:8px;
+  min-width:8px;
+  height:8px;
+  margin-top:-39px;
+  margin-bottom:31px;
+  min-height:8px;
+  content:url(assets/images/Ellipse_2.png);
+}
+.Ellipse-2-outer{
+  pointer-events:none;
+  z-index:23;
+  position:relative;
+  display:flex;
+}
+.Android-Developer-20{
+  position:relative;
+  z-index:25;
+  pointer-events:none;
+  margin-left:33px;
+  width:192px;
+  min-width:192px;
+  margin-top:-16px;
+  margin-bottom:0px;
+  min-height:16px;
+  text-align:left;
+  display:flex;
+  flex-direction:column;
+  justify-content:flex-start;
+  color:rgba(0, 0, 0, 1);
+  font-style:normal;
+  font-family:Roboto;
+  font-weight:400;
+  font-size:14px;
+  line-height:17px;
+}
+.Android-Developer-20-outer{
+  pointer-events:none;
+  z-index:25;
+  position:relative;
+  display:flex;
+}
+.Experince{
+  position:relative;
+  z-index:15;
+  pointer-events:none;
+  margin-left:14px;
+  width:570px;
+  min-width:570px;
+  height:203px;
+  margin-top:-469px;
+  margin-bottom:266px;
+  min-height:203px;
+  overflow:hidden;
+}
+.Experince-outer{
+  pointer-events:none;
+  z-index:15;
+  position:relative;
+  display:flex;
+}
+.Experiance-1{
+  position:relative;
+  z-index:16;
+  pointer-events:none;
+  margin-left:12px;
+  width:530px;
+  min-width:530px;
+  height:182px;
+  margin-top:10px;
+  margin-bottom:11px;
+  min-height:182px;
+}
+.Experiance-1-outer{
+  pointer-events:none;
+  z-index:16;
+  position:relative;
+  display:flex;
+}
+.Experinace{
+  position:relative;
+  z-index:18;
+  pointer-events:none;
+  margin-left:18px;
+  width:79px;
+  min-width:79px;
+  margin-top:0px;
+  margin-bottom:163px;
+  min-height:19px;
+  text-align:left;
+  display:flex;
+  flex-direction:column;
+  justify-content:flex-start;
+  color:rgba(0, 0, 0, 1);
+  font-style:normal;
+  font-family:Roboto;
+  font-weight:500;
+  font-size:16px;
+  line-height:19px;
+}
+.Experinace-outer{
+  pointer-events:none;
+  z-index:18;
+  position:relative;
+  display:flex;
+}
+.Ellipse-2-1{
+  position:relative;
+  z-index:17;
+  pointer-events:none;
+  margin-left:0px;
+  width:8px;
+  min-width:8px;
+  height:8px;
+  margin-top:-176px;
+  margin-bottom:168px;
+  min-height:8px;
+  content:url(assets/images/Ellipse_2_1.png);
+}
+.Ellipse-2-1-outer{
+  pointer-events:none;
+  z-index:17;
+  position:relative;
+  display:flex;
+}
+.Android-Developer-20-1{
+  position:relative;
+  z-index:19;
+  pointer-events:none;
+  margin-left:33px;
+  width:192px;
+  min-width:192px;
+  margin-top:-153px;
+  margin-bottom:137px;
+  min-height:16px;
+  text-align:left;
+  display:flex;
+  flex-direction:column;
+  justify-content:flex-start;
+  color:rgba(0, 0, 0, 1);
+  font-style:normal;
+  font-family:Roboto;
+  font-weight:400;
+  font-size:14px;
+  line-height:17px;
+}
+.Android-Developer-20-1-outer{
+  pointer-events:none;
+  z-index:19;
+  position:relative;
+  display:flex;
+}
+.It-is-a-long-establi-1{
+  position:relative;
+  z-index:20;
+  pointer-events:none;
+  margin-left:109px;
+  width:421px;
+  min-width:421px;
+  margin-top:-125px;
+  margin-bottom:0px;
+  min-height:125px;
+  text-align:left;
+  display:flex;
+  flex-direction:column;
+  justify-content:flex-start;
+  color:rgba(0, 0, 0, 1);
+  font-style:normal;
+  font-family:Roboto;
+  font-weight:400;
+  font-size:12px;
+  line-height:14px;
+}
+.It-is-a-long-establi-1-outer{
+  pointer-events:none;
+  z-index:20;
+  position:relative;
+  display:flex;
+}
+.Education{
+  position:relative;
+  z-index:8;
+  pointer-events:none;
+  margin-left:14px;
+  width:570px;
+  min-width:570px;
+  height:203px;
+  margin-top:-238px;
+  margin-bottom:35px;
+  min-height:203px;
+  overflow:hidden;
+}
+.Education-outer{
+  pointer-events:none;
+  z-index:8;
+  position:relative;
+  display:flex;
+}
+.Experiance-2{
+  position:relative;
+  z-index:9;
+  pointer-events:none;
+  margin-left:12px;
+  width:530px;
+  min-width:530px;
+  height:192px;
+  margin-top:0px;
+  margin-bottom:11px;
+  min-height:192px;
+}
+.Experiance-2-outer{
+  pointer-events:none;
+  z-index:9;
+  position:relative;
+  display:flex;
+}
+.Frame-1{
+  position:relative;
+  z-index:11;
+  pointer-events:none;
+  margin-left:8px;
+  width:92px;
+  min-width:92px;
+  height:39px;
+  margin-top:0px;
+  margin-bottom:153px;
+  min-height:39px;
+}
+.Frame-1-outer{
+  pointer-events:none;
+  z-index:11;
+  position:relative;
+  display:flex;
+}
+.Education-1{
+  position:relative;
+  z-index:12;
+  pointer-events:none;
+  margin-left:10px;
+  width:72px;
+  min-width:72px;
+  margin-top:10px;
+  margin-bottom:10px;
+  min-height:19px;
+  text-align:left;
+  display:flex;
+  flex-direction:column;
+  justify-content:flex-start;
+  color:rgba(0, 0, 0, 1);
+  font-style:normal;
+  font-family:Roboto;
+  font-weight:500;
+  font-size:16px;
+  line-height:19px;
+}
+.Education-1-outer{
+  pointer-events:none;
+  z-index:12;
+  position:relative;
+  display:flex;
+}
+.Ellipse-2-2{
+  position:relative;
+  z-index:10;
+  pointer-events:none;
+  margin-left:0px;
+  width:8px;
+  min-width:8px;
+  height:8px;
+  margin-top:-176px;
+  margin-bottom:168px;
+  min-height:8px;
+  content:url(assets/images/Ellipse_2_2.png);
+}
+.Ellipse-2-2-outer{
+  pointer-events:none;
+  z-index:10;
+  position:relative;
+  display:flex;
+}
+.BCSC-2017-2018{
+  position:relative;
+  z-index:13;
+  pointer-events:none;
+  margin-left:33px;
+  width:113px;
+  min-width:113px;
+  margin-top:-153px;
+  margin-bottom:137px;
+  min-height:16px;
+  text-align:left;
+  display:flex;
+  flex-direction:column;
+  justify-content:flex-start;
+  color:rgba(0, 0, 0, 1);
+  font-style:normal;
+  font-family:Roboto;
+  font-weight:400;
+  font-size:14px;
+  line-height:17px;
+}
+.BCSC-2017-2018-outer{
+  pointer-events:none;
+  z-index:13;
+  position:relative;
+  display:flex;
+}
+.It-is-a-long-establi-2{
+  position:relative;
+  z-index:14;
+  pointer-events:none;
+  margin-left:109px;
+  width:421px;
+  min-width:421px;
+  margin-top:-125px;
+  margin-bottom:0px;
+  min-height:125px;
+  text-align:left;
+  display:flex;
+  flex-direction:column;
+  justify-content:flex-start;
+  color:rgba(0, 0, 0, 1);
+  font-style:normal;
+  font-family:Roboto;
+  font-weight:400;
+  font-size:12px;
+  line-height:14px;
+}
+.It-is-a-long-establi-2-outer{
+  pointer-events:none;
+  z-index:14;
+  position:relative;
+  display:flex;
+}

@@ -33,6 +33,7 @@ class ReferanceFragment : Fragment() {
     private lateinit var phoneEt: EditText
     private lateinit var gmailEt: EditText
     private lateinit var save: Button
+    private lateinit var addMore: Button
     private var compName:String=""
     private var persGmail:String=""
 
@@ -99,6 +100,48 @@ class ReferanceFragment : Fragment() {
 
 
         }
+
+        addMore.setOnClickListener{
+            if(TextUtils.isEmpty(personNameEt.text.toString())){
+                Toast.makeText(context,"Person Name should not be empty", Toast.LENGTH_SHORT).show()
+                return@setOnClickListener
+            }
+            if(TextUtils.isEmpty(phoneEt.text.toString())){
+                Toast.makeText(context,"Phone No should not be empty", Toast.LENGTH_SHORT).show()
+                return@setOnClickListener
+            }
+            else{
+                if (TextUtils.isEmpty(companyNameEt.text.toString())){
+                    compName="empty"
+                }
+                else{
+                    compName=companyNameEt.text.toString()
+                }
+                if (TextUtils.isEmpty(gmailEt.text.toString())){
+                    persGmail="empty"
+                }
+                else{
+                    persGmail=gmailEt.text.toString()
+                }
+                if(param1!=null){
+                    var referance= Referance(0,compName,personNameEt.text.toString(),phoneEt.text.toString(),persGmail,
+                        param1!!
+                    )
+                    mReferanceViewModel.addReference(referance)
+                    Toast.makeText(context,"Successfully added", Toast.LENGTH_SHORT).show()
+                    companyNameEt.setText("")
+                    personNameEt.setText("")
+                    phoneEt.setText("")
+                    gmailEt.setText("")
+
+
+                }
+
+
+
+            }
+
+        }
     }
 
 
@@ -115,6 +158,7 @@ class ReferanceFragment : Fragment() {
         phoneEt =v.findViewById(R.id.referance_phone)
         gmailEt =v.findViewById(R.id.referance_gmail)
         save=v.findViewById(R.id.save_from_referance)
+        addMore=v.findViewById(R.id.referance_add_more)
         mReferanceViewModel = ViewModelProvider(this).get(ReferanceViewModelForWriting::class.java)
     }
 
