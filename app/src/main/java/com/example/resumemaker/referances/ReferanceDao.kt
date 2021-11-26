@@ -2,6 +2,7 @@ package com.example.resumemaker.referances
 
 import androidx.lifecycle.LiveData
 import androidx.room.*
+import com.example.resumemaker.achivements.Achivement
 
 @Dao
 interface ReferanceDao {
@@ -12,5 +13,8 @@ interface ReferanceDao {
 
     @Delete
     fun delete(model: Referance)
+
+    @Update
+    fun updateData(model: Referance)
 
 }

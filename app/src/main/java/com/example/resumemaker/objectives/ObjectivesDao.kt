@@ -14,4 +14,7 @@ interface ObjectivesDao  {
 
     @Delete
     fun delete(model:Objective)
+
+    @Update
+    fun updateData(model: Objective)
 }

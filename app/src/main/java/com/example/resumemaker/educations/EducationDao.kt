@@ -14,4 +14,7 @@ interface EducationDao {
 
     @Delete
     fun delete(model: Education)
+
+    @Update
+    fun updateData(model: Education)
 }

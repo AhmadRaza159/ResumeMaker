@@ -2,7 +2,12 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.example.resumemaker">
 
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.MANAGE_EXTERNAL_STORAGE" />
+
     <application
+        android:requestLegacyExternalStorage="true"
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
         android:label="@string/app_name"
@@ -10,19 +15,22 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.ResumeMaker">
         <activity
+            android:name=".downloaded_resumes.DownloadedResumesActivity"
+            android:exported="true" />
+        <activity
             android:name=".ViewResumeActivity"
             android:exported="true" />
         <activity
             android:name=".ViewTemplatesActivity"
             android:exported="true"
-            android:label="@string/title_activity_view_resume"
-            android:theme="@style/Theme.ResumeMaker.NoActionBar" />
+            android:label="Templates" />
         <activity
             android:name=".AddResumeActivity"
             android:exported="true" />
         <activity
             android:name=".MainActivity"
-            android:exported="true" />
+            android:exported="true"
+            android:label="CV Generator" />
         <activity
             android:name=".SplashScreenActivity"
             android:exported="true">
@@ -32,6 +40,10 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+
+        <meta-data
+            android:name="preloaded_fonts"
+            android:resource="@array/preloaded_fonts" />
     </application>
 
 </manifest>

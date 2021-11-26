@@ -4,6 +4,7 @@ import android.app.Application
 import androidx.lifecycle.AndroidViewModel
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.viewModelScope
+import com.example.resumemaker.achivements.Achivement
 import com.example.resumemaker.experience.Experience
 import com.example.resumemaker.experience.ExperienceRepository
 import com.example.resumemaker.profile.BasicInfoDatabase
@@ -19,8 +20,6 @@ class HobbyViewModel  (application: Application): AndroidViewModel(application) 
     }
     fun getSpecificObj(id: String): LiveData<List<Hobby>>{
         return repository.readAllDat(id)
-
-
     }
 
     fun deleteData(obj: Hobby){
@@ -30,6 +29,9 @@ class HobbyViewModel  (application: Application): AndroidViewModel(application) 
         viewModelScope.launch(Dispatchers.IO) {
             repository.addHobby(hobby)
         }
+    }
+    fun updateData(obj: Hobby){
+        repository.updateData(obj)
     }
 
 }

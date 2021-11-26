@@ -9,6 +9,9 @@ class BasicInfoRepository(private val basicInfoDao: BasicInfoDao) {
         basicInfoDao.addBasicInfo(basicInfo)
 
     }
+    fun updateData(obj: BasicInfo){
+        basicInfoDao.updateData(obj)
+    }
 
     fun deleteData(obj: BasicInfo){
         basicInfoDao.delete(obj)

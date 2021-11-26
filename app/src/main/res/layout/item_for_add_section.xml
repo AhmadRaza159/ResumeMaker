@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+    <androidx.cardview.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:elevation="3dp"
+        android:layout_margin="15dp"
+        app:cardCornerRadius="10dp">
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+        <RelativeLayout
+            android:id="@+id/section_upper"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+            <TextView
+                android:layout_marginHorizontal="25dp"
+                android:id="@+id/section_title"
+                android:layout_marginTop="10dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="#636262"
+                android:textSize="20dp"
+                android:text="title"/>
+
+            <TextView
+                android:id="@+id/section_data"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/section_title"
+                android:layout_marginHorizontal="25dp"
+                android:layout_marginVertical="1dp"
+                android:text="data"
+                android:textColor="#989898"
+                android:textSize="14dp" />
+
+        </RelativeLayout>
+
+
+            <ImageButton
+                android:id="@+id/section_edit_button"
+                android:layout_width="130dp"
+                android:layout_height="50dp"
+                android:layout_below="@+id/section_upper"
+                android:layout_marginStart="20dp"
+                android:layout_marginVertical="5dp"
+                android:background="@android:color/transparent"
+                android:padding="5dp"
+                android:scaleType="centerCrop"
+                android:src="@drawable/profileedit" />
+    <ImageButton
+        android:layout_marginEnd="20dp"
+        android:id="@+id/section_delete_button"
+        android:layout_width="130dp"
+        android:layout_height="50dp"
+        android:layout_marginVertical="5dp"
+        android:background="@android:color/transparent"
+        android:padding="5dp"
+        android:scaleType="centerCrop"
+        android:layout_alignParentEnd="true"
+        android:src="@drawable/profiledelete"
+        android:layout_below="@+id/section_upper"/>
+
+        </RelativeLayout>
+    </androidx.cardview.widget.CardView>
+
+</RelativeLayout>

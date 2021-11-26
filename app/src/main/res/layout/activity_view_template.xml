@@ -1,23 +1,47 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:id="@+id/host_view_resume"
-    tools:context=".ViewTemplatesActivity">
+    android:gravity="center_horizontal"
+    android:padding="20dp">
 
-    <Button
+    <ImageButton
         android:id="@+id/view_resume_template1"
-        android:layout_width="150dp"
-        android:layout_height="150dp"
-        android:text="Template1"/>
-    <Button
+        android:layout_width="170dp"
+        android:layout_height="210dp"
+        android:layout_margin="2dp"
+        android:src="@drawable/template_icon_1"
+        android:scaleType="fitCenter"
+        />
+    <ImageButton
         android:id="@+id/view_resume_template2"
-        android:layout_width="150dp"
-        android:layout_height="150dp"
-        android:layout_marginLeft="10dp"
+        android:layout_width="170dp"
+        android:layout_height="210dp"
+        android:layout_margin="2dp"
+        android:src="@drawable/template_icon_2"
+        android:scaleType="fitCenter"
         android:layout_toRightOf="@+id/view_resume_template1"
-        android:text="Template2"/>
+        />
+    <ImageButton
+        android:id="@+id/view_resume_template3"
+        android:layout_width="170dp"
+        android:layout_height="210dp"
+        android:src="@drawable/template_icon_3"
+        android:layout_margin="2dp"
+        android:scaleType="fitCenter"
+        android:layout_below="@+id/view_resume_template1"
+       />
+    <ImageButton
+        android:id="@+id/view_resume_template4"
+        android:layout_width="170dp"
+        android:layout_height="210dp"
+        android:layout_margin="2dp"
+        android:src="@drawable/template_icon_4"
+        android:scaleType="fitCenter"
+        android:layout_below="@+id/view_resume_template2"
+        android:layout_toRightOf="@+id/view_resume_template3"
+        />
 
 </RelativeLayout>

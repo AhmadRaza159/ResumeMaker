@@ -13,4 +13,7 @@ interface BasicInfoDao {
 
     @Delete
     fun delete(model:BasicInfo)
+
+    @Update
+    fun updateData(model: BasicInfo)
 }

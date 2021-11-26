@@ -5,6 +5,7 @@ import androidx.lifecycle.AndroidViewModel
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.viewModelScope
 import com.example.resumemaker.achivements.Achivement
+import com.example.resumemaker.hobbies.Hobby
 import com.example.resumemaker.profile.BasicInfoDatabase
 import com.example.resumemaker.skills.Skill
 import com.example.resumemaker.skills.SkillRepository
@@ -25,5 +26,11 @@ class LanguageViewModelForWriting(application: Application): AndroidViewModel(ap
         viewModelScope.launch(Dispatchers.IO) {
             repository.addLanguage(language)
         }
+    }
+    fun updateData(obj: Language){
+        repository.updateData(obj)
+    }
+    fun getSpecificObj(id: String): LiveData<List<Language>>{
+        return repository.readAllDat(id)
     }
 }

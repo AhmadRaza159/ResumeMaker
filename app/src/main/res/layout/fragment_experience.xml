@@ -4,81 +4,78 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".experience.ExperienceFragment">
+    <ImageView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:src="@drawable/mainsbackground"
+        android:layout_marginTop="40dp"
 
-   <ScrollView
-       android:layout_width="match_parent"
-       android:layout_height="match_parent">
-       <RelativeLayout
-           android:layout_width="match_parent"
-           android:layout_height="match_parent">
+        android:scaleType="centerCrop"/>
+    <Toolbar
+        android:id="@+id/experience_toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="55dp"
+        android:background="@color/purple_200">
 
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            >
+            <ImageButton
+                android:id="@+id/experience_back"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/arrow"
+                android:background="@android:color/transparent"
+                android:layout_centerVertical="true"/>
 
-           <EditText
-               android:id="@+id/experience_title"
-               android:layout_width="match_parent"
-               android:layout_height="wrap_content"
-               android:layout_marginTop="10dp"
-               android:hint="Title" />
+            <TextView
+                android:id="@+id/experience_title"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:layout_marginStart="20dp"
+                android:layout_toRightOf="@+id/experience_back"
+                android:fontFamily="@font/montserrat"
+                android:text="Experience"
+                android:textStyle="bold"
+                android:textColor="@color/white"
+                android:textSize="20dp"/>
 
-           <EditText
-               android:id="@+id/experience_company"
-               android:layout_width="match_parent"
-               android:layout_height="wrap_content"
-               android:layout_below="@+id/experience_title"
-               android:layout_marginTop="10dp"
-               android:hint="Company" />
+            <ImageButton
+                android:id="@+id/experience_done"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/done"
+                android:layout_alignParentEnd="true"
+                android:layout_marginEnd="20dp"
+                android:background="@android:color/transparent"
+                android:layout_centerVertical="true"/>
+        </RelativeLayout>
 
-           <EditText
-               android:id="@+id/experience_city"
-               android:layout_width="match_parent"
-               android:layout_height="wrap_content"
-               android:layout_below="@+id/experience_company"
-               android:layout_marginTop="10dp"
-               android:hint="City" />
-
-           <EditText
-               android:id="@+id/experience_start_date"
-               android:layout_width="match_parent"
-               android:layout_height="wrap_content"
-               android:layout_below="@+id/experience_city"
-               android:layout_marginTop="10dp"
-               android:hint="Start Date" />
-
-           <EditText
-               android:id="@+id/experience_end_date"
-               android:layout_width="match_parent"
-               android:layout_height="wrap_content"
-               android:layout_below="@+id/experience_start_date"
-               android:layout_marginTop="10dp"
-               android:hint="Phone No" />
-
-           <EditText
-               android:id="@+id/experience_detail"
-               android:layout_width="match_parent"
-               android:layout_height="wrap_content"
-               android:layout_below="@id/experience_end_date"
-               android:layout_marginTop="10dp"
-               android:hint="Details" />
+    </Toolbar>
 
 
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/experience_recyclerview"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginVertical="20dp"
+        android:layout_below="@+id/experience_toolbar"/>
 
-           <Button
-               android:id="@+id/save_and_next_from_experience"
-               android:layout_width="wrap_content"
-               android:layout_height="wrap_content"
-               android:layout_below="@+id/experience_detail"
-               android:layout_marginTop="20dp"
-               android:text="Save and Next" />
-           <Button
-               android:id="@+id/experience_add_more"
-               android:layout_width="wrap_content"
-               android:layout_height="wrap_content"
-               android:layout_below="@id/save_and_next_from_experience"
-               android:text="Add More"/>
+    <ImageButton
+        android:id="@+id/experience_add_more"
+        android:layout_width="130dp"
+        android:layout_height="50dp"
+        android:layout_marginBottom="5dp"
+        android:background="@android:color/transparent"
+        android:layout_marginTop="20dp"
+        android:padding="5dp"
+        android:scaleType="centerCrop"
+        android:src="@drawable/add_button"
+        android:layout_centerHorizontal="true"
+        android:layout_alignParentBottom="true"
+        />
 
-
-
-       </RelativeLayout>
-   </ScrollView>
 
 </RelativeLayout>

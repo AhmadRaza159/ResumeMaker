@@ -1,5 +1,9 @@
 package com.example.resumemaker
 
+import android.net.Uri
+import android.os.Build
+import android.os.Environment
+import androidx.annotation.RequiresApi
 import com.example.resumemaker.achivements.Achivement
 import com.example.resumemaker.educations.Education
 import com.example.resumemaker.experience.Experience
@@ -10,6 +14,7 @@ import com.example.resumemaker.profile.BasicInfo
 import com.example.resumemaker.projects.Project
 import com.example.resumemaker.referances.Referance
 import com.example.resumemaker.skills.Skill
+import java.io.File
 
 class GenerateResume(
     val basicInfo: BasicInfo,
@@ -25,6 +30,7 @@ class GenerateResume(
 ) {
     var className:String=""
     fun template1():String{
+
         var htmlCode:String="<!DOCTYPE html >\n" +
                 "<html>\n" +
                 "<head>\n" +
@@ -292,12 +298,11 @@ class GenerateResume(
                 "\n" +
                 "</body>\n" +
                 "</html>\n"
-
         return htmlCode
-
     }
 
     fun template2():String{
+
         var htmlCode:String="<!DOCTYPE html>\n" +
                 "<html>\n" +
                 "<head>\n" +
@@ -306,154 +311,15 @@ class GenerateResume(
                 "<meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\">\n" +
                 "<title>Cv Templet</title>\n" +
                 "<link rel=\"stylesheet\" type=\"text/css\" href=\"file:///android_asset/styletemp2.css\" media=\"all\" />\n" +
+                "\n" +
                 "</head>\n" +
                 "<body>\n" +
                 "<div id=\"Cv_Templet\">\n" +
-                "\t<div id=\"Group_5\">\n" +
-                "\t\t<svg class=\"Path_15\" viewBox=\"0 0 780.276 1103.987\">\n" +
-                "\t\t\t<path id=\"Path_15\" d=\"M 0 0 L 772.7133178710938 0 L 780.275634765625 0 L 780.275634765625 1103.986694335938 L 0 1103.986694335938 L 0 0 Z\">\n" +
-                "\t\t\t</path>\n" +
-                "\t\t</svg>\n" +
-                "\t\t<div id=\"Group_3\">\n" +
-                "\t\t\t<div id=\"Group_2\">\n" +
-                "\t\t\t\t<img id=\"Group_1\" src=\"man.jpg\" srcset=\"man.jpg 1x, man.jpg 2x\">\n" +
-                "\t\t\t\t\t\n" +
-                "\t\t\t\t</svg>\n" +
-                "\t\t\t</div>\n" +
-                "\t\t\t<svg class=\"Path_1\" viewBox=\"315.195 -56.484 280.022 282.393\">\n" +
-                "\t\t\t\t<path id=\"Path_1\" d=\"M 571.0199584960938 225.9092102050781 L 569.148193359375 224.8579711914062 C 584.797607421875 197.0065002441406 593.0712280273438 165.2934875488281 593.0712280273438 133.1479034423828 C 593.0712280273438 29.76797103881836 508.965087890625 -54.33824920654297 405.5850830078125 -54.33824920654297 C 374.3715209960938 -54.33824920654297 343.4698486328125 -46.51288986206055 316.21875 -31.71024703979492 L 315.1950073242188 -33.59514999389648 C 342.758056640625 -48.56949996948242 374.0149536132812 -56.48400115966797 405.5850830078125 -56.48400115966797 C 510.148681640625 -56.48400115966797 595.2169799804688 28.58433723449707 595.2169799804688 133.1479034423828 C 595.2169799804688 165.6604919433594 586.8489379882812 197.7379302978516 571.0199584960938 225.9092102050781 Z\">\n" +
-                "\t\t\t\t</path>\n" +
-                "\t\t\t</svg>\n" +
-                "\t\t\t<svg class=\"Path_2\" viewBox=\"224.743 27.341 46.354 206.671\">\n" +
-                "\t\t\t\t<path id=\"Path_2\" d=\"M 267.6893615722656 234.0117492675781 C 239.5941314697266 197.3177490234375 224.7429962158203 153.4302215576172 224.7429962158203 107.0967330932617 C 224.7429962158203 79.47990417480469 230.0464324951172 52.64691925048828 240.5051422119141 27.34099769592285 L 244.4702301025391 28.98078155517578 C 234.2277984619141 53.76371002197266 229.0344848632812 80.04616546630859 229.0344848632812 107.0967330932617 C 229.0344848632812 152.4798889160156 243.5802154541016 195.4643096923828 271.097412109375 231.4032897949219 L 267.6893615722656 234.0117492675781 Z\">\n" +
-                "\t\t\t\t</path>\n" +
-                "\t\t\t</svg>\n" +
-                "\t\t\t<svg class=\"Path_3\" viewBox=\"384.154 -94.241 186.872 102.422\">\n" +
-                "\t\t\t\t<path id=\"Path_3\" d=\"M 555.3839111328125 8.180757522583008 C 513.5215454101562 -44.18229293823242 451.1112365722656 -74.21357727050781 384.1539916992188 -74.21357727050781 L 384.1539916992188 -94.24099731445312 C 457.22998046875 -94.24099731445312 525.3434448242188 -61.46755599975586 571.0254516601562 -4.325394630432129 L 555.3839111328125 8.180757522583008 Z\">\n" +
-                "\t\t\t\t</path>\n" +
-                "\t\t\t</svg>\n" +
-                "\t\t</div>\n" +
-                "\t\t<svg class=\"Rectangle_3\">\n" +
-                "\t\t\t<rect id=\"Rectangle_3\" rx=\"0\" ry=\"0\" x=\"0\" y=\"0\" width=\"780.276\" height=\"20.285\">\n" +
-                "\t\t\t</rect>\n" +
-                "\t\t</svg>\n" +
-                "\t</div>\n" +
-                "\t<div id=\"Marie\">\n" +
-                "\t\t<span>${basicInfo.name}</span>\n" +
-                "\t</div>\n" +
-                "\t<div id=\"Manager_Producer\">\n" +
-                "\t\t<span>${basicInfo.designation}</span>\n" +
-                "\t</div>\n" +
-                "\t<svg class=\"Rectangle_5\">\n" +
-                "\t\t<rect id=\"Rectangle_5\" rx=\"0\" ry=\"0\" x=\"0\" y=\"0\" width=\"26.513\" height=\"2.622\">\n" +
-                "\t\t</rect>\n" +
+                "\t<svg class=\"Path_15\" viewBox=\"0 0 780.276 1551.987\">\n" +
+                "\t\t<path id=\"Path_15\" d=\"M 0 0 L 772.7133178710938 0 L 780.275634765625 0 L 780.275634765625 1551.986694335938 L 0 1551.986694335938 L 0 0 Z\">\n" +
+                "\t\t</path>\n" +
                 "\t</svg>\n" +
-                "\t<div id=\"P_058_302_59_35\">\n" +
-                "\t\t<span>P</span><span style=\"font-style:normal;font-weight:bold;color:rgba(10,10,10,1);\"> ${basicInfo.phone}</span>\n" +
-                "\t</div>\n" +
-                "\t<div id=\"E__julesmailcom\">\n" +
-                "\t\t<span>E </span><span style=\"font-style:normal;font-weight:bold;color:rgba(10,10,10,1);\"> ${basicInfo.gmail}</span>\n" +
-                "\t</div>\n" +
-                "\t<div id=\"Group_7\">\n" +
-                "\t\t<svg class=\"Rectangle_12\">\n" +
-                "\t\t\t<rect id=\"Rectangle_12\" rx=\"0\" ry=\"0\" x=\"0\" y=\"0\" width=\"1.311\" height=\"650.97\">\n" +
-                "\t\t\t</rect>\n" +
-                "\t\t</svg>\n" +
-                "\t</div>\n" +
-                "\t<div id=\"Profile\">\n" +
-                "\t\t<div id=\"Profile_\">\n" +
-                "\t\t\t<span>Profile</span>\n" +
-                "\t\t</div>\n" +
-                "\t\t<div id=\"Lorem_ipsum_dolor_sit_amet_con\">\n" +
-                "\t\t\t<span>${objective.get(0).data}</span>\n" +
-                "\t\t</div>\n" +
-                "\t\t<svg class=\"Rectangle_23\">\n" +
-                "\t\t\t<rect id=\"Rectangle_23\" rx=\"0\" ry=\"0\" x=\"0\" y=\"0\" width=\"397\" height=\"131\">\n" +
-                "\t\t\t</rect>\n" +
-                "\t\t</svg>\n" +
-                "\t</div>\n"
-        for (i in experiences){
-            htmlCode=htmlCode+"<div id=\"EXPERIENCE\">\n" +
-                    "\t\t<svg class=\"Rectangle_29\">\n" +
-                    "\t\t\t<rect id=\"Rectangle_29\" rx=\"0\" ry=\"0\" x=\"0\" y=\"0\" width=\"397\" height=\"162\">\n" +
-                    "\t\t\t</rect>\n" +
-                    "\t\t</svg>\n" +
-                    "\t\t<div id=\"Quentum_Comp\">\n" +
-                    "\t\t\t<span>${i.company}</span>\n" +
-                    "\t\t</div>\n" +
-                    "\t\t<div id=\"Supervisor\">\n" +
-                    "\t\t\t<span>${i.title}</span>\n" +
-                    "\t\t</div>\n" +
-                    "\t\t<div id=\"Lorem_ipsum_dolor_sit_amet_con_\">\n" +
-                    "\t\t\t<span>${i.details}</span>\n" +
-                    "\t\t</div>\n" +
-                    "\t\t<div id=\"n_018_-_2020\">\n" +
-                    "\t\t\t<span>${i.startDate} - ${i.EndDate}</span>\n" +
-                    "\t\t</div>\n" +
-                    "\t</div>"
-        }
-        htmlCode=htmlCode+"<div id=\"EDUCATION\">\n" +
-                "\t\t<div id=\"EDUCATION_bg\">\n" +
-                "\t\t\t<span>EDUCATION</span>\n" +
-                "\t\t</div>\n" +
-                "\t\t<div id=\"educationset\">"
-        for (i in educations){
-            htmlCode=htmlCode+"<div id=\"Name_School_BARCHELOR_2002_-_2\">\n" +
-                    "\t\t\t\t<span>${i.degree} (${i.school}) ${i.startDate} - ${i.endDate}</span>\n" +
-                    "\t\t\t</div>"
-        }
-        htmlCode=htmlCode+"</div>\n" +
-                "\t\t\n" +
-                "\t</div>\n" +
-                "\t<div id=\"Skills\">\n" +
-                "\t\t<div id=\"skills\">\n" +
-                "\t\t\t<span>skills</span>\n" +
-                "\t\t</div>\n" +
-                "\t\t<div id=\"skillset\">"
-        for (i in skills){
-            htmlCode=htmlCode+"<div id=\"Skill_1\">\n" +
-                    "\t\t\t\t<span>${i.title} (${i.expLevel})</span>\n" +
-                    "\t\t\t</div>"
-        }
-        htmlCode=htmlCode+"</div>\n" +
-                "\t</div>\n" +
-                "\t<div id=\"Group_21\">\n" +
-                "\t\t<div id=\"hobies\">\n" +
-                "\t\t\t<span>hobies</span>\n" +
-                "\t\t</div>\n" +
-                "\t\t<div id=\"hobbyset\">"
-        for (i in projects){
-            htmlCode=htmlCode+"<div id=\"Travel\">\n" +
-                    "\t\t\t\t<span>${i.title}</span>\n" +
-                    "\t\t\t</div>"
-        }
-        htmlCode=htmlCode+"</div>\n" +
-                "\t\t\n" +
-                "\t</div>\n" +
-                "\t<div id=\"Languages\">\n" +
-                "\t\t<div id=\"languages\">\n" +
-                "\t\t\t<span>languages</span>\n" +
-                "\t\t</div>\n" +
-                "\t\t<div id=\"langset\">"
-        for (i in languages){
-            htmlCode=htmlCode+"<div id=\"English\">\n" +
-                    "\t\t\t\t<span>${i.lang} (${i.expLevel})</span>\n" +
-                    "\t\t\t</div>"
-        }
-        htmlCode=htmlCode+"\n" +
-                "\t\t</div>\n" +
-                "\t\t\n" +
-                "\t</div>\n" +
                 "\t\n" +
-                "\t<div id=\"EXPERIENCE_b\">\n" +
-                "\t\t<div id=\"EXPERIENCE_ca\">\n" +
-                "\t\t\t<span>EXPERIENCE</span>\n" +
-                "\t\t</div>\n" +
-                "\t\t<svg class=\"Rectangle_30\">\n" +
-                "\t\t\t<rect id=\"Rectangle_30\" rx=\"0\" ry=\"0\" x=\"0\" y=\"0\" width=\"378\" height=\"29\">\n" +
-                "\t\t\t</rect>\n" +
-                "\t\t</svg>\n" +
-                "\t</div>\n" +
                 "\t<svg class=\"Path_16\" viewBox=\"1410.669 488.638 46.136 99.447\">\n" +
                 "\t\t<path id=\"Path_16\" d=\"M 1456.805419921875 488.6380004882812 C 1431.008178710938 490.5535278320312 1410.6689453125 512.0751342773438 1410.6689453125 538.3615112304688 C 1410.6689453125 564.6478881835938 1431.008178710938 586.1694946289062 1456.805419921875 588.0850830078125 L 1456.805419921875 488.6380004882812 Z\">\n" +
                 "\t\t</path>\n" +
@@ -464,6 +330,941 @@ class GenerateResume(
                 "\t\t\t</path>\n" +
                 "\t\t</svg>\n" +
                 "\t</div>\n" +
+                "\t<div id=\"Pic\">\n" +
+                "\t\t<div id=\"Group_3\">\n" +
+                "\t\t\t<div id=\"Group_2\">\n" +
+                "\t\t\t\t<img id=\"Group_1\" src=\" file://${basicInfo.imgPath}\" srcset=\"file://${basicInfo.imgPath} 1x, file://${basicInfo.imgPath} 2x\">\n" +
+                "\t\t\t\t\t\n" +
+                "\t\t\t\t</svg>\n" +
+                "\t\t\t</div>\n" +
+                "\t\t\t<svg class=\"Path_1\" viewBox=\"315.195 -56.484 216.57 218.404\">\n" +
+                "\t\t\t\t<path id=\"Path_1\" d=\"M 513.05078125 161.9197387695312 L 511.6031799316406 161.1067199707031 C 523.7064208984375 139.5662994384766 530.1052856445312 115.0393676757812 530.1052856445312 90.17788696289062 C 530.1052856445312 10.22353172302246 465.057373046875 -54.82446670532227 385.1029663085938 -54.82446670532227 C 360.9623107910156 -54.82446670532227 337.0628662109375 -48.77231216430664 315.9867858886719 -37.32390594482422 L 315.1950073242188 -38.78169250488281 C 336.5123596191406 -50.36289978027344 360.6865234375 -56.48400115966797 385.1029663085938 -56.48400115966797 C 465.9727783203125 -56.48400115966797 531.7647705078125 9.308107376098633 531.7647705078125 90.17788696289062 C 531.7647705078125 115.3232192993164 525.2929077148438 140.1319885253906 513.05078125 161.9197387695312 Z\">\n" +
+                "\t\t\t\t</path>\n" +
+                "\t\t\t</svg>\n" +
+                "\t\t\t<svg class=\"Path_2\" viewBox=\"224.743 27.341 35.851 159.84\">\n" +
+                "\t\t\t\t<path id=\"Path_2\" d=\"M 257.9578552246094 187.1807708740234 C 236.2289123535156 158.8015289306641 224.7429962158203 124.858772277832 224.7429962158203 89.02432250976562 C 224.7429962158203 67.66539001464844 228.8446807861328 46.91267013549805 236.9334869384766 27.34099769592285 L 240.0001068115234 28.60921096801758 C 232.0785827636719 47.77640151977539 228.0620574951172 68.10333251953125 228.0620574951172 89.02432250976562 C 228.0620574951172 124.1237945556641 239.311767578125 157.3680725097656 260.5936279296875 185.1633911132812 L 257.9578552246094 187.1807708740234 Z\">\n" +
+                "\t\t\t\t</path>\n" +
+                "\t\t\t</svg>\n" +
+                "\t\t\t<svg class=\"Path_3\" viewBox=\"384.154 -94.241 144.527 79.213\">\n" +
+                "\t\t\t\t<path id=\"Path_3\" d=\"M 516.583740234375 -15.0277042388916 C 484.2072448730469 -55.52544403076172 435.9389038085938 -78.75173187255859 384.1539916992188 -78.75173187255859 L 384.1539916992188 -94.24099731445312 C 440.6711730957031 -94.24099731445312 493.3503112792969 -68.8939208984375 528.680908203125 -24.70000076293945 L 516.583740234375 -15.0277042388916 Z\">\n" +
+                "\t\t\t\t</path>\n" +
+                "\t\t\t</svg>\n" +
+                "\t\t</div>\n" +
+                "\t\t<div id=\"Pic_t\">\n" +
+
+
+                "\t\t</div>\n" +
+                "\t</div>\n" +
+                "\t\n" +
+                "\t<div id=\"Name\">\n" +
+                "\t\t<div id=\"Muhammad_Ahmad_Raza\">\n" +
+                "\t\t\t<span>${basicInfo.name}</span>\n" +
+                "\t\t</div>\n" +
+                "\t\t<div id=\"Manager_Producer\">\n" +
+                "\t\t\t<span>${basicInfo.designation}</span>\n" +
+                "\t\t</div>\n" +
+                "\t\t<div id=\"P_058_302_59_35\">\n" +
+                "\t\t\t<span>P</span><span style=\"font-style:normal;font-weight:bold;color:rgba(10,10,10,1);\"> ${basicInfo.phone}</span>\n" +
+                "\t\t</div>\n" +
+                "\t\t<div id=\"E__julesmailcom\">\n" +
+                "\t\t\t<span>E </span><span style=\"font-style:normal;font-weight:bold;color:rgba(10,10,10,1);\"> ${basicInfo.gmail}</span>\n" +
+                "\t\t</div>\n" +
+                "\t\t<svg class=\"Rectangle_34\">\n" +
+                "\t\t\t<rect id=\"Rectangle_34\" rx=\"0\" ry=\"0\" x=\"0\" y=\"0\" width=\"369\" height=\"244\">\n" +
+                "\t\t\t</rect>\n" +
+                "\t\t</svg>\n" +
+                "\t</div>\n" +
+                "\t<div id=\"Right_Side\">\n" +
+                "\t\t<div class=\"Ach\">\n" +
+                "\t\t\t<div class=\"Group_41\">\n" +
+                "\t\t\t\t<div class=\"Profile_dd\">\n" +
+                "\t\t\t\t\t<span>Education</span>\n" +
+                "\t\t\t\t</div>\n" +
+                "\t\t\t\t\n" +
+                "\t\t\t</div>\n" +
+                "\t\t\t<div class=\"Group_42\">"
+        for (i in educations){
+            htmlCode=htmlCode+"<div class=\"Lorem_ipsum_dolor_sit_amet_con\">\n" +
+                    "\t\t\t\t\t<h4>${i.school} ${i.city} (${i.startDate} - ${i.endDate})</h4>\n" +
+                    "\t\t\t\t\t<h3>${i.degree}</h3>\n" +
+                    "\t\t\t\t\t<span>${i.details}</span>\n" +
+                    "\t\t\t\t</div>"
+        }
+        htmlCode=htmlCode+"\n" +
+                "\t\t\t</div>\n" +
+                "\t\t</div>\n" +
+                "\t\t<div class=\"Ach\">\n" +
+                "\t\t\t<div class=\"Group_41\">\n" +
+                "\t\t\t\t<div class=\"Profile_dd\">\n" +
+                "\t\t\t\t\t<span>Skills</span>\n" +
+                "\t\t\t\t</div>\n" +
+                "\t\t\t\t\n" +
+                "\t\t\t</div>\n" +
+                "\t\t\t<div class=\"Group_42\">"
+        for (i in skills){
+            htmlCode=htmlCode+"<div class=\"Lorem_ipsum_dolor_sit_amet_con\">\n" +
+                    "\t\t\t\t\t<span>${i.title} (${i.expLevel})</span>\n" +
+                    "\t\t\t\t</div>"
+        }
+        htmlCode=htmlCode+"\t\n" +
+                "\t\t\t</div>\n" +
+                "\t\t</div>\n" +
+                "\t\t<div class=\"Ach\">\n" +
+                "\t\t\t<div class=\"Group_41\">\n" +
+                "\t\t\t\t<div class=\"Profile_dd\">\n" +
+                "\t\t\t\t\t<span>Languages</span>\n" +
+                "\t\t\t\t</div>\n" +
+                "\t\t\t\t\n" +
+                "\t\t\t</div>\n" +
+                "\t\t\t<div class=\"Group_42\">"
+        for (i in languages){
+            htmlCode=htmlCode+"<div class=\"Lorem_ipsum_dolor_sit_amet_con\">\n" +
+                    "\t\t\t\t\t<span>${i.lang} (${i.expLevel})</span>\n" +
+                    "\t\t\t\t</div>"
+        }
+
+        htmlCode=htmlCode+"\n" +
+                "\t\t\t</div>\n" +
+                "\t\t</div>\n" +
+                "\t\t<div class=\"Ach\">\n" +
+                "\t\t\t<div class=\"Group_41\">\n" +
+                "\t\t\t\t<div class=\"Profile_dd\">\n" +
+                "\t\t\t\t\t<span>Hobbies</span>\n" +
+                "\t\t\t\t</div>\n" +
+                "\t\t\t\t\n" +
+                "\t\t\t</div>\n" +
+                "\t\t\t<div class=\"Group_42\">"
+        for (i in hobbies){
+            htmlCode=htmlCode+"<div class=\"Lorem_ipsum_dolor_sit_amet_con\">\n" +
+                    "\t\t\t\t\t<span>${i.title}</span>\n" +
+                    "\t\t\t\t</div>"
+        }
+        htmlCode=htmlCode+"\n" +
+                "\t\t\t</div>\n" +
+                "\t\t</div>\n" +
+                "\t\t<div class=\"Ach\">\n" +
+                "\t\t\t<div class=\"Group_41\">\n" +
+                "\t\t\t\t<div class=\"Profile_dd\">\n" +
+                "\t\t\t\t\t<span>Referances</span>\n" +
+                "\t\t\t\t</div>\n" +
+                "\t\t\t\t\n" +
+                "\t\t\t</div>\n" +
+                "\t\t\t<div class=\"Group_42\">"
+        for (i in references){
+            htmlCode=htmlCode+"<div class=\"Lorem_ipsum_dolor_sit_amet_con\">\n" +
+                    "\t\t\t\t\t<h4>${i.companyName}</h4>\n" +
+                    "\t\t\t\t\t<h3>${i.personName}</h3>\n" +
+                    "\t\t\t\t\t<span>${i.phone}</span>\n" +
+                    "\t\t\t\t\t<span>${i.gmail}</span>\n" +
+                    "\t\t\t\t</div>"
+        }
+        htmlCode=htmlCode+"\t\n" +
+                "\t\t\t</div>\n" +
+                "\t\t</div>\n" +
+                "\t\t\n" +
+                "\t\t\n" +
+                "\t</div>\n" +
+                "\t<div id=\"Left_Side\">\n" +
+                "\t\t<div class=\"Profile\">\n" +
+                "\t\t\t<div class=\"Group_41\">\n" +
+                "\t\t\t\t<div class=\"Profile_dd\">\n" +
+                "\t\t\t\t\t<span>Profile</span>\n" +
+                "\t\t\t\t</div>\n" +
+                "\t\t\t\t\n" +
+                "\t\t\t</div>\n" +
+                "\t\t\t<div class=\"Group_42\">\n" +
+                "\t\t\t\t<div class=\"Lorem_ipsum_dolor_sit_amet_con\">\n" +
+                "\t\t\t\t\t<span>${objective.get(0).data}</span>\n" +
+                "\t\t\t\t</div>\n" +
+                "\t\t\t\t\n" +
+                "\t\t\t</div>\n" +
+                "\t\t</div>\n" +
+                "\t\t<div class=\"EXPERIENCE\">\n" +
+                "\t\t\t<div class=\"Group_49\">\n" +
+                "\t\t\t\t<div class=\"Group_50\">\n" +
+                "\t\t\t\t\t<div class=\"EXPERIENCE_d\">\n" +
+                "\t\t\t\t\t\t<span>EXPERIENCE</span>\n" +
+                "\t\t\t\t\t</div>\n" +
+                "\t\t\t\t</div>\n" +
+                "\t\t\t</div>"
+
+        for (i in experiences){
+            htmlCode=htmlCode+"<div class=\"Group_48\">\n" +
+                    "\t\t\t\t<div class=\"Group_44\">\n" +
+                    "\t\t\t\t\t<div class=\"Quentum_Comp\">\n" +
+                    "\t\t\t\t\t\t<span>${i.company} (${i.city})</span>\n" +
+                    "\t\t\t\t\t</div>\n" +
+                    "\t\t\t\t\t<div class=\"Supervisor\">\n" +
+                    "\t\t\t\t\t\t<span>${i.title}</span>\n" +
+                    "\t\t\t\t\t</div>\n" +
+                    "\t\t\t\t\t<div class=\"n_018_-_2020\">\n" +
+                    "\t\t\t\t\t\t<span>${i.startDate} - ${i.EndDate}</span>\n" +
+                    "\t\t\t\t\t</div>\n" +
+                    "\t\t\t\t\t<div class=\"Lorem_ipsum_dolor_sit_amet_con_dl\">\n" +
+                    "\t\t\t\t\t\t<span>${i.details}</span>\n" +
+                    "\t\t\t\t\t</div>\n" +
+                    "\t\t\t\t</div>\n" +
+                    "\t\t\t\t\n" +
+                    "\t\t\t</div>"
+        }
+        htmlCode=htmlCode+"\n" +
+                "\t\t\t\n" +
+                "\t\t</div>\n" +
+                "\n" +
+                "\t\t<div class=\"EXPERIENCE\">\n" +
+                "\t\t\t<div class=\"Group_49\">\n" +
+                "\t\t\t\t<div class=\"Group_50\">\n" +
+                "\t\t\t\t\t<div class=\"EXPERIENCE_d\">\n" +
+                "\t\t\t\t\t\t<span>Projects</span>\n" +
+                "\t\t\t\t\t</div>\n" +
+                "\t\t\t\t</div>\n" +
+                "\t\t\t</div>"
+        for (i in projects){
+            htmlCode=htmlCode+"<div class=\"Group_48\">\n" +
+                    "\t\t\t\t<div class=\"Group_44\">\n" +
+                    "\t\t\t\t\t<div class=\"Supervisor2\">\n" +
+                    "\t\t\t\t\t\t<span>${i.title}</span>\n" +
+                    "\t\t\t\t\t</div>\n" +
+                    "\t\t\t\t\t<div class=\"Lorem_ipsum_dolor_sit_amet_con_dl\">\n" +
+                    "\t\t\t\t\t\t<span>${i.details}</span>\n" +
+                    "\t\t\t\t\t</div>\n" +
+                    "\t\t\t\t</div>\n" +
+                    "\t\t\t</div>"
+        }
+        htmlCode=htmlCode+"\n" +
+                "\t\t</div>\n" +
+                "\t\t\n" +
+                "\t\t<div class=\"Ach\">\n" +
+                "\t\t\t<div class=\"Group_41\">\n" +
+                "\t\t\t\t<div class=\"Profile_dd\">\n" +
+                "\t\t\t\t\t<span>Achievements</span>\n" +
+                "\t\t\t\t</div>\n" +
+                "\t\t\t\t\n" +
+                "\t\t\t</div>\n" +
+                "\t\t\t<div class=\"Group_42\">"
+        for (i in achivements){
+            htmlCode=htmlCode+"<div class=\"Lorem_ipsum_dolor_sit_amet_con\">\n" +
+                    "\t\t\t\t\t<h3>${i.title}</h3>\n" +
+                    "\t\t\t\t\t<span>${i.details}</span>\n" +
+                    "\t\t\t\t</div>"
+        }
+        htmlCode=htmlCode+"\n" +
+                "\t\t\t\t\n" +
+                "\t\t\t</div>\n" +
+                "\t\t</div>\n" +
+
+                "\t\t\n" +
+                "\t\t\n" +
+                "\t</div>\n" +
+                "</div>\n" +
+                "\n" +
+                "</body>\n" +
+                "</html>"
+
+        return htmlCode
+    }
+
+
+    //This is template 3 design
+
+    fun template3():String{
+        var htmlCode:String="<!DOCTYPE html>\n" +
+                "<html>\n" +
+                "<head>\n" +
+                "<meta charset=\"utf-8\"/>\n" +
+                "<meta http-equiv=\"X-UA-Compatible\" content=\"IE=edge\"/>\n" +
+                "<meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\">\n" +
+                "<title>Cv Templet – 3</title>\n" +
+                "<link rel=\"stylesheet\" type=\"text/css\" href=\"file:///android_asset/temp2css.css\" media=\"all\" />\n" +
+                "\n" +
+                "</head>\n" +
+                "<body>\n" +
+                "<div id=\"Cv_Templet__3\">\n" +
+                "\t<svg class=\"Path_15_d\" viewBox=\"0 0 780.276 1551.987\">\n" +
+                "\t\t<path id=\"Path_15_d\" d=\"M 0 0 L 772.7133178710938 0 L 780.275634765625 0 L 780.275634765625 1551.986694335938 L 0 1551.986694335938 L 0 0 Z\">\n" +
+                "\t\t</path>\n" +
+                "\t</svg>\n" +
+                "\t<div id=\"Group_54\">\n" +
+                "\t\t<svg class=\"Rectangle_54\">\n" +
+                "\t\t\t<rect id=\"Rectangle_54\" rx=\"0\" ry=\"0\" x=\"0\" y=\"0\" width=\"268.387\" height=\"1550.89\">\n" +
+                "\t\t\t</rect>\n" +
+                "\t\t</svg>\n" +
+                "\t\t<svg class=\"Path_65\" viewBox=\"100.148 33.959 780.276 245.702\">\n" +
+                "\t\t\t<path id=\"Path_65\" d=\"M 100.147705078125 33.95890045166016 L 880.42333984375 33.95890045166016 L 880.42333984375 279.6610107421875 L 100.147705078125 33.95890045166016 Z\">\n" +
+                "\t\t\t</path>\n" +
+                "\t\t</svg>\n" +
+                "\t\t<svg class=\"Path_66\" viewBox=\"100.148 33.959 324.965 325.542\">\n" +
+                "\t\t\t<path id=\"Path_66\" d=\"M 425.11279296875 136.2877349853516 L 100.147705078125 359.501220703125 L 100.147705078125 33.95890045166016 L 425.11279296875 136.2877349853516 Z\">\n" +
+                "\t\t\t</path>\n" +
+                "\t\t</svg>\n" +
+                "\t</div>\n" +
+                "\t<div id=\"Arslan_Ahmed\">\n" +
+                "\t\t<span>${basicInfo.name}</span>\n" +
+                "\t</div>\n" +
+                "\t<svg class=\"Ellipse_5\">\n" +
+                "\t\t<ellipse id=\"Ellipse_5\" rx=\"115\" ry=\"115\" cx=\"115\" cy=\"115\">\n" +
+                "\t\t</ellipse>\n" +
+                "\t</svg>\n" +
+                "\t<div id=\"Senior_Interface_Designer\">\n" +
+                "\t\t<span>${basicInfo.designation}</span>\n" +
+                "\t</div>\n" +
+                "\t<div id=\"Pic_eh\">\n" +
+                "\t\t<img id=\"Group_1\" src=\"file://${basicInfo.imgPath}\" srcset=\"file://${basicInfo.imgPath} 1x, file://${basicInfo.imgPath} 2x\">\n" +
+                "\t</div>\n" +
+                "\t<div id=\"Right_side\">\n" +
+                "\t\t\n" +
+                "\t\t<div class=\"Profile_eq\">\n" +
+                "\t\t\t\n" +
+                "\t\t\t<div class=\"Group_41_es\">\n" +
+                "\t\t\t\t<div class=\"Profile_et\">\n" +
+                "\t\t\t\t\t<span>Profile</span>\n" +
+                "\t\t\t\t</div>\n" +
+                "                <svg class=\"Line_6\" viewBox=\"0 0 456.5 2\">\n" +
+                "                    <path class=\"Line_61\" d=\"M 0 0 L 456.5 0\">\n" +
+                "                    </path>\n" +
+                "                </svg>\n" +
+                "\t\t\t</div>\n" +
+                "\t\t\t<div class=\"Group_42_ev\">\n" +
+                "\t\t\t\t<div class=\"Progressively_evolve_cross-pla\">\n" +
+                "\t\t\t\t\t<span>${objective.get(0).data}</span>\n" +
+                "\t\t\t\t</div>\n" +
+                "\t\t\t\t\n" +
+                "\t\t\t</div>\n" +
+                "\t\t</div>\n" +
+                "        <div class=\"Group_49\">\n" +
+                "\t\t\t<div class=\"Group_50\">\n" +
+                "\t\t\t\t<div class=\"EXPERIENCE_fe\">\n" +
+                "\t\t\t\t\t<span>EXPERIENCE</span>\n" +
+                "\t\t\t\t</div>\n" +
+                "\t\t\t\t<svg class=\"Line_6\" viewBox=\"0 0 456.5 2\">\n" +
+                "                    <path class=\"Line_61\" d=\"M 0 0 L 456.5 0\">\n" +
+                "                    </path>\n" +
+                "                </svg>\n" +
+                "\t\t\t</div>\n" +
+                "\t\t</div>"
+        for (i in experiences){
+            htmlCode=htmlCode+"<div class=\"Group_48\">\n" +
+                    "\t\t\t<div class=\"Group_43\">\n" +
+                    "\t\t\t\t<div class=\"Group_43_e\">\n" +
+                    "\t\t\t\t\t<div class=\"Facebook_Islamabad\">\n" +
+                    "\t\t\t\t\t\t<span>${i.company} (${i.city})</span>\n" +
+                    "\t\t\t\t\t</div>\n" +
+                    "\t\t\t\t\t<div class=\"Senior_Interface_Designer_e\">\n" +
+                    "\t\t\t\t\t\t<span>${i.title}r</span>\n" +
+                    "\t\t\t\t\t</div>\n" +
+                    "\t\t\t\t\t<div class=\"n_018_-_2020_e\">\n" +
+                    "\t\t\t\t\t\t<span>${i.startDate} - ${i.EndDate}</span>\n" +
+                    "\t\t\t\t\t</div>\n" +
+                    "                    <div class=\"Intrinsicly_enable_optimal_cor\">\n" +
+                    "\t\t\t\t\t\t<span>${i.details}</span>\n" +
+                    "\t\t\t\t\t</div>\n" +
+                    "\t\t\t\t</div>\n" +
+                    "\t\t\t\t\n" +
+                    "\t\t\t</div>\n" +
+                    "\t\t</div>"
+        }
+        htmlCode=htmlCode+"\n" +
+                "\t\t<div class=\"Group_49\">\n" +
+                "\t\t\t<div class=\"Group_50\">\n" +
+                "\t\t\t\t<div class=\"EXPERIENCE_fe\">\n" +
+                "\t\t\t\t\t<span>EDUCATION</span>\n" +
+                "\t\t\t\t</div>\n" +
+                "\t\t\t\t<svg class=\"Line_6\" viewBox=\"0 0 456.5 2\">\n" +
+                "                    <path class=\"Line_61\" d=\"M 0 0 L 456.5 0\">\n" +
+                "                    </path>\n" +
+                "                </svg>\n" +
+                "\t\t\t</div>\n" +
+                "\t\t</div>"
+        for (i in educations){
+            htmlCode=htmlCode+"<div class=\"Group_48\">\n" +
+                    "\t\t\t<div class=\"Group_43\">\n" +
+                    "\t\t\t\t<div class=\"Group_43_e\">\n" +
+                    "\t\t\t\t\t<div class=\"Facebook_Islamabad\">\n" +
+                    "\t\t\t\t\t\t<span>${i.degree} (${i.city})</span>\n" +
+                    "\t\t\t\t\t</div>\n" +
+                    "\t\t\t\t\t<div class=\"Senior_Interface_Designer_e\">\n" +
+                    "\t\t\t\t\t\t<span>${i.school}</span>\n" +
+                    "\t\t\t\t\t</div>\n" +
+                    "\t\t\t\t\t<div class=\"n_018_-_2020_e\">\n" +
+                    "\t\t\t\t\t\t<span>${i.startDate} - ${i.endDate}</span>\n" +
+                    "\t\t\t\t\t</div>\n" +
+                    "                    <div class=\"Intrinsicly_enable_optimal_cor\">\n" +
+                    "\t\t\t\t\t\t<span>${i.details}</span>\n" +
+                    "\t\t\t\t\t</div>\n" +
+                    "\t\t\t\t</div>\n" +
+                    "\t\t\t\t\n" +
+                    "\t\t\t</div>\n" +
+                    "\t\t</div>"
+        }
+        htmlCode=htmlCode+"\n" +
+                "\t\t<div class=\"Group_49\">\n" +
+                "\t\t\t<div class=\"Group_50\">\n" +
+                "\t\t\t\t<div class=\"EXPERIENCE_fe\">\n" +
+                "\t\t\t\t\t<span>PROJECTS</span>\n" +
+                "\t\t\t\t</div>\n" +
+                "\t\t\t\t<svg class=\"Line_6\" viewBox=\"0 0 456.5 2\">\n" +
+                "                    <path class=\"Line_61\" d=\"M 0 0 L 456.5 0\">\n" +
+                "                    </path>\n" +
+                "                </svg>\n" +
+                "\t\t\t</div>\n" +
+                "\t\t</div>"
+        for (i in projects){
+            htmlCode=htmlCode+"<div class=\"Group_48\">\n" +
+                    "\t\t\t<div class=\"Group_43\">\n" +
+                    "\t\t\t\t<div class=\"Group_43_e\">\n" +
+                    "\t\t\t\t\t<div class=\"Facebook_Islamabad\">\n" +
+                    "\t\t\t\t\t\t<span>${i.title}</span>\n" +
+                    "\t\t\t\t\t</div>\n" +
+                    "\t\t\t\t\t\n" +
+                    "                    <div class=\"Intrinsicly_enable_optimal_cor\">\n" +
+                    "\t\t\t\t\t\t<span>${i.details}</span>\n" +
+                    "\t\t\t\t\t</div>\n" +
+                    "\t\t\t\t</div>\n" +
+                    "\t\t\t\t\n" +
+                    "\t\t\t</div>\n" +
+                    "\t\t</div>"
+        }
+        htmlCode=htmlCode+"\n" +
+                "\t\t<div class=\"Group_49\">\n" +
+                "\t\t\t<div class=\"Group_50\">\n" +
+                "\t\t\t\t<div class=\"EXPERIENCE_fe\">\n" +
+                "\t\t\t\t\t<span>ACHIEVEMENTS</span>\n" +
+                "\t\t\t\t</div>\n" +
+                "\t\t\t\t<svg class=\"Line_6\" viewBox=\"0 0 456.5 2\">\n" +
+                "                    <path class=\"Line_61\" d=\"M 0 0 L 456.5 0\">\n" +
+                "                    </path>\n" +
+                "                </svg>\n" +
+                "\t\t\t</div>\n" +
+                "\t\t</div>"
+        for (i in achivements){
+            htmlCode=htmlCode+"<div class=\"Group_48\">\n" +
+                    "\t\t\t<div class=\"Group_43\">\n" +
+                    "\t\t\t\t<div class=\"Group_43_e\">\n" +
+                    "\t\t\t\t\t<div class=\"Facebook_Islamabad\">\n" +
+                    "\t\t\t\t\t\t<span>${i.title}</span>\n" +
+                    "\t\t\t\t\t</div>\n" +
+                    "\t\t\t\t\t\n" +
+                    "                    <div class=\"Intrinsicly_enable_optimal_cor\">\n" +
+                    "\t\t\t\t\t\t<span>${i.details}</span>\n" +
+                    "\t\t\t\t\t</div>\n" +
+                    "\t\t\t\t</div>\n" +
+                    "\t\t\t\t\n" +
+                    "\t\t\t</div>\n" +
+                    "\t\t</div>"
+        }
+        htmlCode=htmlCode+"\n" +
+                "\t\t\n" +
+                "\t</div>\n" +
+                "\t<div id=\"Group_113\">\n" +
+                "\t\t\n" +
+                "\t\t<div class=\"CONTACT_go\">\n" +
+                "\t\t\t<div class=\"CONTACT_gp\">\n" +
+                "\t\t\t\t<span>CONTACT</span>\n" +
+                "\t\t\t</div>\n" +
+                "\t\t</div>\n" +
+                "\t\t<svg class=\"Line_1\" viewBox=\"0 0 233.5 2\">\n" +
+                "\t\t\t<path class=\"Line_198\" d=\"M 0 0 L 233.5 0\">\n" +
+                "\t\t\t</path>\n" +
+                "\t\t</svg>\n" +
+                "\t\t<div class=\"CONTACT\">\n" +
+                "\t\t\t<div class=\"n_2-4586-846\">\n" +
+                "\t\t\t\t<span>${basicInfo.phone}</span>\n" +
+                "\t\t\t</div>\n" +
+                "\t\t\t<div class=\"gordonalbertsonemailcom\">\n" +
+                "\t\t\t\t<span>${basicInfo.gmail}</span>\n" +
+                "\t\t\t</div>\n" +
+                "\t\t\t<div class=\"n_4_Bowery_St_\">\n" +
+                "\t\t\t\t<span>${basicInfo.dob}</span>\n" +
+                "\t\t\t</div>\n" +
+                "\t\t\t<div class=\"wwwyourcompanycom\">\n" +
+                "\t\t\t\t<span>${basicInfo.address}</span>\n" +
+                "\t\t\t</div>\n" +
+                "\t\t\t\n" +
+                "\t\t</div>\n" +
+                "\n" +
+                "\n" +
+                "\t\t<div class=\"CONTACT_go\">\n" +
+                "\t\t\t<div class=\"CONTACT_gp\">\n" +
+                "\t\t\t\t<span>SKILLS</span>\n" +
+                "\t\t\t</div>\n" +
+                "\t\t</div>\n" +
+                "\t\t<svg class=\"Line_1\" viewBox=\"0 0 233.5 2\">\n" +
+                "\t\t\t<path class=\"Line_198\" d=\"M 0 0 L 233.5 0\">\n" +
+                "\t\t\t</path>\n" +
+                "\t\t</svg>\n" +
+                "\t\t<div class=\"CONTACT\">"
+        for (i in skills){
+            htmlCode=htmlCode+"<div class=\"n_2-4586-846\">\n" +
+                    "\t\t\t\t<span>${i.title} (${i.expLevel})</span>\n" +
+                    "\t\t\t</div>"
+        }
+
+        htmlCode=htmlCode+"\t\n" +
+                "\t\t</div>\n" +
+                "\t\t\n" +
+                "\n" +
+                "\n" +
+                "\t\t<div class=\"CONTACT_go\">\n" +
+                "\t\t\t<div class=\"CONTACT_gp\">\n" +
+                "\t\t\t\t<span>HOBBIES</span>\n" +
+                "\t\t\t</div>\n" +
+                "\t\t</div>\n" +
+                "\t\t<svg class=\"Line_1\" viewBox=\"0 0 233.5 2\">\n" +
+                "\t\t\t<path class=\"Line_198\" d=\"M 0 0 L 233.5 0\">\n" +
+                "\t\t\t</path>\n" +
+                "\t\t</svg>\n" +
+                "\t\t<div class=\"CONTACT\">"
+        for (i in hobbies){
+            htmlCode=htmlCode+"<div class=\"n_2-4586-846\">\n" +
+                    "\t\t\t\t<span>${i.title}</span>\n" +
+                    "\t\t\t</div>"
+        }
+        htmlCode=htmlCode+"\t\n" +
+                "\t\t\t\n" +
+                "\t\t</div>\n" +
+                "\n" +
+                "\n" +
+                "\t\t<div class=\"CONTACT_go\">\n" +
+                "\t\t\t<div class=\"CONTACT_gp\">\n" +
+                "\t\t\t\t<span>LANGUAGES</span>\n" +
+                "\t\t\t</div>\n" +
+                "\t\t</div>\n" +
+                "\t\t<svg class=\"Line_1\" viewBox=\"0 0 233.5 2\">\n" +
+                "\t\t\t<path class=\"Line_198\" d=\"M 0 0 L 233.5 0\">\n" +
+                "\t\t\t</path>\n" +
+                "\t\t</svg>\n" +
+                "\t\t<div class=\"CONTACT\">"
+        for (i in languages){
+            htmlCode=htmlCode+"<div class=\"n_2-4586-846\">\n" +
+                    "\t\t\t\t<span>${i.lang} (${i.expLevel})</span>\n" +
+                    "\t\t\t</div>"
+        }
+        htmlCode=htmlCode+"\t\n" +
+                "\t\t</div>\n" +
+                "\n" +
+                "\n" +
+                "\t\t<div class=\"CONTACT_go\">\n" +
+                "\t\t\t<div class=\"CONTACT_gp\">\n" +
+                "\t\t\t\t<span>REFERENCES</span>\n" +
+                "\t\t\t</div>\n" +
+                "\t\t</div>\n" +
+                "\t\t<svg class=\"Line_1\" viewBox=\"0 0 233.5 2\">\n" +
+                "\t\t\t<path class=\"Line_198\" d=\"M 0 0 L 233.5 0\">\n" +
+                "\t\t\t</path>\n" +
+                "\t\t</svg>\n"
+        for (i in references){
+            htmlCode=htmlCode+"<div class=\"CONTACT\">\n" +
+                    "\t\t\t<div class=\"n_2-4586-846\">\n" +
+                    "\t\t\t\t<span>${i.companyName}</span>\n" +
+                    "\t\t\t</div>\n" +
+                    "\t\t\t<div class=\"gordonalbertsonemailcom\">\n" +
+                    "\t\t\t\t<span>${i.personName}</span>\n" +
+                    "\t\t\t</div>\n" +
+                    "\t\t\t<div class=\"n_4_Bowery_St_\">\n" +
+                    "\t\t\t\t<span>${i.phone}</span>\n" +
+                    "\t\t\t</div>\n" +
+                    "\t\t\t<div class=\"wwwyourcompanycom\">\n" +
+                    "\t\t\t\t<span>${i.gmail}</span>\n" +
+                    "\t\t\t</div>\n" +
+                    "\t\t\t\n" +
+                    "\t\t</div>"
+        }
+        htmlCode=htmlCode+"\n" +
+                "\n" +
+                "\t</div>\n" +
+                "</div>\n" +
+                "</body>\n" +
+                "</html>"
+
+
+        return htmlCode
+    }
+
+
+    //this is template 4
+
+
+    fun template4():String{
+        var htmlCode="<!DOCTYPE html>\n" +
+                "<html>\n" +
+                "<head>\n" +
+                "<meta charset=\"utf-8\"/>\n" +
+                "<meta http-equiv=\"X-UA-Compatible\" content=\"IE=edge\"/>\n" +
+                "<meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\">\n" +
+                "<title>Cv Templet – 6</title>\n" +
+                "<link rel=\"stylesheet\" type=\"text/css\" href=\"file:///android_asset/temp3css.css\" media=\"all\" />\n" +
+                "\n" +
+                "</head>\n" +
+                "<body>\n" +
+                "<div id=\"Cv_Templet__6\">\n" +
+                "\t<svg class=\"Rectangle_70\">\n" +
+                "\t\t<rect id=\"Rectangle_70\" rx=\"0\" ry=\"0\" x=\"0\" y=\"0\" width=\"257\" height=\"150\">\n" +
+                "\t\t</rect>\n" +
+                "\t</svg>\n" +
+                "\t<svg class=\"Path_20\" viewBox=\"0 0 1 1\">\n" +
+                "\t\t<path id=\"Path_20\" d=\"M 0 0 L 0 0 Z\">\n" +
+                "\t\t</path>\n" +
+                "\t</svg>\n" +
+                "\t<svg class=\"Rectangle_69\">\n" +
+                "\t\t<rect id=\"Rectangle_69\" rx=\"0\" ry=\"0\" x=\"0\" y=\"0\" width=\"549\" height=\"114\">\n" +
+                "\t\t</rect>\n" +
+                "\t</svg>\n"
+
+        if (basicInfo.imgPath!="empty"){
+            htmlCode=htmlCode+"\t<svg class=\"Ellipse_6\">\n" +
+                    "\t\t<ellipse id=\"Ellipse_6\" rx=\"109\" ry=\"109\" cx=\"109\" cy=\"109\">\n" +
+                    "\t\t\t\t<img id=\"Group_1\" src=\" file://${basicInfo.imgPath}\" srcset=\"file://${basicInfo.imgPath} 1x, file://${basicInfo.imgPath} 2x\">\n" +
+                    "\t\t</ellipse>\n" +
+                    "\t</svg>\n"
+        }
+
+        htmlCode=htmlCode+"\t<div id=\"mUBASHAR_aHMAD\">\n" +
+                "\t\t<span>${basicInfo.name}</span>\n" +
+                "\t</div>\n" +
+                "\t<div id=\"Graphic_Designer\">\n" +
+                "\t\t<span>${basicInfo.designation}</span>\n" +
+                "\t</div>\n" +
+                "\t<div id=\"Left_side\">\n"
+
+        if (objective.size>0){
+            htmlCode=htmlCode+"<div class=\"Experience\">\n" +
+                    "\t\t\t<div class=\"Group_116\">\n" +
+                    "\t\t\t\t<div class=\"Group_66\">\n" +
+                    "\t\t\t\t\t<div class=\"Group_50_bp\">\n" +
+                    "\t\t\t\t\t\t<div class=\"EXPERIENCE\">\n" +
+                    "\t\t\t\t\t\t\t<span>Objectives</span>\n" +
+                    "\t\t\t\t\t\t</div>\n" +
+                    "\t\t\t\t\t</div>\n" +
+                    "\t\t\t\t</div>\n" +
+                    "\t\t\t\t\n" +
+                    "\t\t\t</div>\n" +
+                    "\t\t\t<svg class=\"Rectangle_83\">\n" +
+                    "\t\t\t\t<rect class=\"Rectangle_831\" rx=\"0\" ry=\"0\" x=\"0\" y=\"0\" width=\"803\" height=\"52\">\n" +
+                    "\t\t\t\t</rect>\n" +
+                    "\t\t\t</svg>\n" +
+                    "\n" +
+                    "\t\t\t<div class=\"Group_67\">\n" +
+                    "\t\t\t\t<div class=\"Group_43\">\n" +
+                    "\t\t\t\t\t<div class=\"Group_43_bd\">\n" +
+                    "\t\t\t\t\t\t\n" +
+                    "\t\t\t\t\t\t<div class=\"Intrinsicly_enable_optimal_cor\">\n" +
+                    "\t\t\t\t\t\t\t<span>${objective.get(0).data}</span>\n" +
+                    "\t\t\t\t\t\t</div>\n" +
+                    "\t\t\t\t\t</div>\n" +
+                    "\t\t\t\t\t\n" +
+                    "\t\t\t\t</div>\n" +
+                    "\t\t\t</div>\n" +
+                    "\n" +
+                    "\t\t\t\n" +
+                    "\t\t\t\n" +
+                    "\t\t</div>"
+        }
+
+        if(experiences.size>0){
+            htmlCode=htmlCode+"\t\t<div class=\"Experience\">\n" +
+                    "\t\t\t<div class=\"Group_116\">\n" +
+                    "\t\t\t\t<div class=\"Group_66\">\n" +
+                    "\t\t\t\t\t<div class=\"Group_50_bp\">\n" +
+                    "\t\t\t\t\t\t<div class=\"EXPERIENCE\">\n" +
+                    "\t\t\t\t\t\t\t<span>EXPERIENCE</span>\n" +
+                    "\t\t\t\t\t\t</div>\n" +
+                    "\t\t\t\t\t</div>\n" +
+                    "\t\t\t\t</div>\n" +
+                    "\t\t\t\t\n" +
+                    "\t\t\t</div>\n" +
+                    "\t\t\t<svg class=\"Rectangle_83\">\n" +
+                    "\t\t\t\t<rect class=\"Rectangle_831\" rx=\"0\" ry=\"0\" x=\"0\" y=\"0\" width=\"803\" height=\"52\">\n" +
+                    "\t\t\t\t</rect>\n" +
+                    "\t\t\t</svg>\n" +
+                    "\n"
+            for (i in experiences){
+                htmlCode=htmlCode+"<div class=\"Group_67\">\n" +
+                        "\t\t\t\t<div class=\"Group_43\">\n" +
+                        "\t\t\t\t\t<div class=\"Group_43_bd\">\n" +
+                        "\t\t\t\t\t\t\n" +
+                        "\t\t\t\t\t\t<div class=\"Facebook_Islamabad\">\n" +
+                        "\t\t\t\t\t\t\t<span>${i.company} (${i.city})</span>\n" +
+                        "\t\t\t\t\t\t</div>\n" +
+                        "\t\t\t\t\t\t<div class=\"Senior_Interface_Designer\">\n" +
+                        "\t\t\t\t\t\t\t<span>${i.title}</span>\n" +
+                        "\t\t\t\t\t\t</div>\n" +
+                        "\t\t\t\t\t\t<div class=\"n_018_-_2020\">\n" +
+                        "\t\t\t\t\t\t\t<span>${i.startDate} - ${i.EndDate}</span>\n" +
+                        "\t\t\t\t\t\t</div>\n" +
+                        "\t\t\t\t\t\t<div class=\"Intrinsicly_enable_optimal_cor\">\n" +
+                        "\t\t\t\t\t\t\t<span>${i.details}</span>\n" +
+                        "\t\t\t\t\t\t</div>\n" +
+                        "\t\t\t\t\t</div>\n" +
+                        "\t\t\t\t\t\n" +
+                        "\t\t\t\t</div>\n" +
+                        "\t\t\t</div>"
+            }
+
+            htmlCode=htmlCode+"\n" +
+                    "\t\t</div>\n"
+        }
+
+        if(educations.size>0){
+            htmlCode=htmlCode+"\n" +
+                    "\t\t<div class=\"Experience\">\n" +
+                    "\t\t\t<div class=\"Group_116\">\n" +
+                    "\t\t\t\t<div class=\"Group_66\">\n" +
+                    "\t\t\t\t\t<div class=\"Group_50_bp\">\n" +
+                    "\t\t\t\t\t\t<div class=\"EXPERIENCE\">\n" +
+                    "\t\t\t\t\t\t\t<span>Education</span>\n" +
+                    "\t\t\t\t\t\t</div>\n" +
+                    "\t\t\t\t\t</div>\n" +
+                    "\t\t\t\t</div>\n" +
+                    "\t\t\t\t\n" +
+                    "\t\t\t</div>\n" +
+                    "\t\t\t<svg class=\"Rectangle_83\">\n" +
+                    "\t\t\t\t<rect class=\"Rectangle_831\" rx=\"0\" ry=\"0\" x=\"0\" y=\"0\" width=\"803\" height=\"52\">\n" +
+                    "\t\t\t\t</rect>\n" +
+                    "\t\t\t</svg>\n" +
+                    "\n"
+            for (i in educations){
+                htmlCode=htmlCode+"<div class=\"Group_67\">\n" +
+                        "\t\t\t\t<div class=\"Group_43\">\n" +
+                        "\t\t\t\t\t<div class=\"Group_43_bd\">\n" +
+                        "\t\t\t\t\t\t\n" +
+                        "\t\t\t\t\t\t<div class=\"Facebook_Islamabad\">\n" +
+                        "\t\t\t\t\t\t\t<span>${i.school} (${i.city})</span>\n" +
+                        "\t\t\t\t\t\t</div>\n" +
+                        "\t\t\t\t\t\t<div class=\"Senior_Interface_Designer\">\n" +
+                        "\t\t\t\t\t\t\t<span>${i.degree}</span>\n" +
+                        "\t\t\t\t\t\t</div>\n" +
+                        "\t\t\t\t\t\t<div class=\"n_018_-_2020\">\n" +
+                        "\t\t\t\t\t\t\t<span>${i.startDate} - ${i.endDate}</span>\n" +
+                        "\t\t\t\t\t\t</div>\n" +
+                        "\t\t\t\t\t\t<div class=\"Intrinsicly_enable_optimal_cor\">\n" +
+                        "\t\t\t\t\t\t\t<span>${i.details}</span>\n" +
+                        "\t\t\t\t\t\t</div>\n" +
+                        "\t\t\t\t\t</div>\n" +
+                        "\t\t\t\t\t\n" +
+                        "\t\t\t\t</div>\n" +
+                        "\t\t\t</div>"
+            }
+            htmlCode=htmlCode+"\n" +
+                    "\t\t</div>\n"
+        }
+
+        if (projects.size>0){
+            htmlCode=htmlCode+"\t\t<div class=\"Experience\">\n" +
+                    "\t\t\t<div class=\"Group_116\">\n" +
+                    "\t\t\t\t<div class=\"Group_66\">\n" +
+                    "\t\t\t\t\t<div class=\"Group_50_bp\">\n" +
+                    "\t\t\t\t\t\t<div class=\"EXPERIENCE\">\n" +
+                    "\t\t\t\t\t\t\t<span>Projects</span>\n" +
+                    "\t\t\t\t\t\t</div>\n" +
+                    "\t\t\t\t\t</div>\n" +
+                    "\t\t\t\t</div>\n" +
+                    "\t\t\t\t\n" +
+                    "\t\t\t</div>\n" +
+                    "\t\t\t<svg class=\"Rectangle_83\">\n" +
+                    "\t\t\t\t<rect class=\"Rectangle_831\" rx=\"0\" ry=\"0\" x=\"0\" y=\"0\" width=\"803\" height=\"52\">\n" +
+                    "\t\t\t\t</rect>\n" +
+                    "\t\t\t</svg>\n"
+            for (i in projects){
+                htmlCode=htmlCode+"<div class=\"Group_67\">\n" +
+                        "\t\t\t\t<div class=\"Group_43\">\n" +
+                        "\t\t\t\t\t<div class=\"Group_43_bd\">\n" +
+                        "\t\t\t\t\t\t\n" +
+                        "\t\t\t\t\t\t<div class=\"Facebook_Islamabad\">\n" +
+                        "\t\t\t\t\t\t\t<span>${i.title}</span>\n" +
+                        "\t\t\t\t\t\t</div>\n" +
+                        "\t\t\t\t\t\t<div class=\"Intrinsicly_enable_optimal_cor\">\n" +
+                        "\t\t\t\t\t\t\t<span>${i.details}</span>\n" +
+                        "\t\t\t\t\t\t</div>\n" +
+                        "\t\t\t\t\t</div>\n" +
+                        "\t\t\t\t\t\n" +
+                        "\t\t\t\t</div>\n" +
+                        "\t\t\t</div>"
+            }
+            htmlCode=htmlCode+"\n" +
+                    "\t\t</div>\n"
+
+        }
+
+        ////////////
+
+        if (achivements.size>0){
+
+            htmlCode=htmlCode+"\t\t<div class=\"Experience\">\n" +
+                    "\t\t\t<div class=\"Group_116\">\n" +
+                    "\t\t\t\t<div class=\"Group_66\">\n" +
+                    "\t\t\t\t\t<div class=\"Group_50_bp\">\n" +
+                    "\t\t\t\t\t\t<div class=\"EXPERIENCE\">\n" +
+                    "\t\t\t\t\t\t\t<span>Achievements</span>\n" +
+                    "\t\t\t\t\t\t</div>\n" +
+                    "\t\t\t\t\t</div>\n" +
+                    "\t\t\t\t</div>\n" +
+                    "\t\t\t\t\n" +
+                    "\t\t\t</div>\n" +
+                    "\t\t\t<svg class=\"Rectangle_83\">\n" +
+                    "\t\t\t\t<rect class=\"Rectangle_831\" rx=\"0\" ry=\"0\" x=\"0\" y=\"0\" width=\"803\" height=\"52\">\n" +
+                    "\t\t\t\t</rect>\n" +
+                    "\t\t\t</svg>"
+
+            for (i in achivements){
+                htmlCode=htmlCode+"<div class=\"Group_67\">\n" +
+                        "\t\t\t\t<div class=\"Group_43\">\n" +
+                        "\t\t\t\t\t<div class=\"Group_43_bd\">\n" +
+                        "\t\t\t\t\t\t\n" +
+                        "\t\t\t\t\t\t<div class=\"Facebook_Islamabad\">\n" +
+                        "\t\t\t\t\t\t\t<span>${i.title}</span>\n" +
+                        "\t\t\t\t\t\t</div>\n" +
+                        "\t\t\t\t\t\t<div class=\"Intrinsicly_enable_optimal_cor\">\n" +
+                        "\t\t\t\t\t\t\t<span>${i.details}</span>\n" +
+                        "\t\t\t\t\t\t</div>\n" +
+                        "\t\t\t\t\t</div>\n" +
+                        "\t\t\t\t\t\n" +
+                        "\t\t\t\t</div>\n" +
+                        "\t\t\t</div>"
+            }
+
+            htmlCode=htmlCode+"\n" +
+                    "\t\t</div>\n"
+        }
+
+
+        htmlCode=htmlCode+"\t</div>\n" +
+                "\t<div id=\"Right_Side\">\n" +
+
+
+                "\t\t<div class=\"CONTACT\">\n" +
+                "\t\t\t<div class=\"Group_123\">\n" +
+                "\t\t\t\t<div class=\"CONTACT_c\">\n" +
+                "\t\t\t\t\t<span>CONTACT</span>\n" +
+                "\t\t\t\t</div>\n" +
+                "\t\t\t\t<svg class=\"Rectangle_73\">\n" +
+                "\t\t\t\t\t<rect class=\"Rectangle_731\" rx=\"0\" ry=\"0\" x=\"0\" y=\"0\" width=\"172\" height=\"28\">\n" +
+                "\t\t\t\t\t</rect>\n" +
+                "\t\t\t\t</svg>\n" +
+                "\t\t\t\t\n" +
+                "\t\t\t</div>\n" +
+                "\t\t\t<div class=\"Group_124\">\n" +
+                "\t\t\t\t<div class=\"gordonalbertsonemailcom\">\n" +
+                "\t\t\t\t\t<span>${basicInfo.gmail}</span>\n" +
+                "\t\t\t\t</div>\n" +
+                "\t\t\t\t<div class=\"n_4_Bowery_St_\">\n" +
+                "\t\t\t\t\t<span>${basicInfo.phone}</span>\n" +
+                "\t\t\t\t</div>\n" +
+                "\t\t\t\t<div class=\"wwwyourcompanycom\">\n" +
+                "\t\t\t\t\t<span>${basicInfo.dob}</span>\n" +
+                "\t\t\t\t</div>\n" +
+                "\t\t\t\t<div class=\"n_2-4586-846\">\n" +
+                "\t\t\t\t\t<span>${basicInfo.address}</span>\n" +
+                "\t\t\t\t</div>\n" +
+                "\t\t\t\t\n" +
+                "\t\t\t</div>\n" +
+                "\t\t\t\n" +
+                "\t\t</div>\n"
+
+        if (skills.size>0){
+            htmlCode=htmlCode+"\t\t<div class=\"CONTACT\">\n" +
+                    "\t\t\t<div class=\"Group_123\">\n" +
+                    "\t\t\t\t<div class=\"CONTACT_c\">\n" +
+                    "\t\t\t\t\t<span>SKILLS</span>\n" +
+                    "\t\t\t\t</div>\n" +
+                    "\t\t\t\t<svg class=\"Rectangle_73\">\n" +
+                    "\t\t\t\t\t<rect class=\"Rectangle_731\" rx=\"0\" ry=\"0\" x=\"0\" y=\"0\" width=\"172\" height=\"28\">\n" +
+                    "\t\t\t\t\t</rect>\n" +
+                    "\t\t\t\t</svg>\n" +
+                    "\t\t\t\t\n" +
+                    "\t\t\t</div>\n" +
+                    "\t\t\t<div class=\"Group_124\">"
+
+            for (i in skills){
+                htmlCode=htmlCode+"<div class=\"set\">\n" +
+                        "\t\t\t\t\t<span>${i.title} (${i.expLevel})</span>\n" +
+                        "\t\t\t\t</div>"
+            }
+            htmlCode=htmlCode+"\n" +
+                    "\t\t\t</div>\n" +
+                    "\t\t\t\n" +
+                    "\t\t</div>\n"
+        }
+
+        if (hobbies.size>0){
+            htmlCode=htmlCode+"\t\t<div class=\"CONTACT\">\n" +
+                    "\t\t\t<div class=\"Group_123\">\n" +
+                    "\t\t\t\t<div class=\"CONTACT_c\">\n" +
+                    "\t\t\t\t\t<span>HOBBIES</span>\n" +
+                    "\t\t\t\t</div>\n" +
+                    "\t\t\t\t<svg class=\"Rectangle_73\">\n" +
+                    "\t\t\t\t\t<rect class=\"Rectangle_731\" rx=\"0\" ry=\"0\" x=\"0\" y=\"0\" width=\"172\" height=\"28\">\n" +
+                    "\t\t\t\t\t</rect>\n" +
+                    "\t\t\t\t</svg>\n" +
+                    "\t\t\t\t\n" +
+                    "\t\t\t</div>\n" +
+                    "\t\t\t<div class=\"Group_124\">"
+
+            for (i in hobbies){
+                htmlCode=htmlCode+"<div class=\"set\">\n" +
+                        "\t\t\t\t\t<span>${i.title}</span>\n" +
+                        "\t\t\t\t</div>"
+            }
+
+            htmlCode=htmlCode+"\n" +
+                    "\t\t\t</div>\n" +
+                    "\t\t\t\n" +
+                    "\t\t</div>\n"
+        }
+
+        if(languages.size>0){
+            htmlCode=htmlCode+"\t\t<div class=\"CONTACT\">\n" +
+                    "\t\t\t<div class=\"Group_123\">\n" +
+                    "\t\t\t\t<div class=\"CONTACT_c\">\n" +
+                    "\t\t\t\t\t<span>LANGUAGES</span>\n" +
+                    "\t\t\t\t</div>\n" +
+                    "\t\t\t\t<svg class=\"Rectangle_73\">\n" +
+                    "\t\t\t\t\t<rect class=\"Rectangle_731\" rx=\"0\" ry=\"0\" x=\"0\" y=\"0\" width=\"172\" height=\"28\">\n" +
+                    "\t\t\t\t\t</rect>\n" +
+                    "\t\t\t\t</svg>\n" +
+                    "\t\t\t\t\n" +
+                    "\t\t\t</div>\n" +
+                    "\t\t\t<div class=\"Group_124\">"
+
+            for (i in languages){
+                htmlCode=htmlCode+"<div class=\"set\">\n" +
+                        "\t\t\t\t\t<span>${i.lang} (${i.expLevel})</span>\n" +
+                        "\t\t\t\t</div>"
+            }
+            htmlCode=htmlCode+"\t\n" +
+                    "\t\t\t</div>\n" +
+                    "\t\t\t\n" +
+                    "\t\t</div>\n"
+        }
+        if (references.size>0){
+
+            htmlCode=htmlCode+"\t\t<div class=\"CONTACT\">\n" +
+                    "\t\t\t<div class=\"Group_123\">\n" +
+                    "\t\t\t\t<div class=\"CONTACT_c\">\n" +
+                    "\t\t\t\t\t<span>REFERANCES</span>\n" +
+                    "\t\t\t\t</div>\n" +
+                    "\t\t\t\t<svg class=\"Rectangle_73\">\n" +
+                    "\t\t\t\t\t<rect class=\"Rectangle_731\" rx=\"0\" ry=\"0\" x=\"0\" y=\"0\" width=\"172\" height=\"28\">\n" +
+                    "\t\t\t\t\t</rect>\n" +
+                    "\t\t\t\t</svg>\n" +
+                    "\t\t\t\t\n" +
+                    "\t\t\t</div>\n" +
+                    "\t\t\t<div class=\"Group_124\">"
+            for (i in references){
+                htmlCode=htmlCode+"<div class=\"set\">\n" +
+                        "\t\t\t\t\t<p>${i.companyName}</p>\n" +
+                        "\t\t\t\t\t<p>${i.personName}</p>\n" +
+                        "\t\t\t\t\t<p>${i.phone}</p>\n" +
+                        "\t\t\t\t\t<p>${i.gmail}</p>\n" +
+                        "\t\t\t\t</div>"
+            }
+            htmlCode=htmlCode+"\n" +
+                    "\t\t\t</div>\n" +
+                    "\t\t\t\n" +
+                    "\t\t</div>\t\t\n"
+
+        }
+
+        htmlCode=htmlCode+"\t</div>\n" +
                 "</div>\n" +
                 "</body>\n" +
                 "</html>"

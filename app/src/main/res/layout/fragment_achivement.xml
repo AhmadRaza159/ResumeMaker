@@ -3,52 +3,76 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent">
-
-
-    <ScrollView
+    <ImageView
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
+        android:layout_height="match_parent"
+        android:src="@drawable/mainsbackground"
+        android:layout_marginTop="40dp"
+
+        android:scaleType="centerCrop"/>
+    <Toolbar
+        android:id="@+id/achivement_toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="55dp"
+        android:background="@color/purple_200">
 
         <RelativeLayout
             android:layout_width="match_parent"
-            android:layout_height="match_parent">
+            android:layout_height="match_parent"
+            >
+            <ImageButton
+                android:id="@+id/achivement_back"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/arrow"
+                android:background="@android:color/transparent"
+                android:layout_centerVertical="true"/>
 
-
-            <EditText
+            <TextView
                 android:id="@+id/achivement_title"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="10dp"
-                android:hint="Title" />
-
-            <EditText
-                android:id="@+id/achivement_details"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_below="@+id/achivement_title"
-                android:layout_marginTop="10dp"
-                android:hint="Details" />
-
-
-            <Button
-                android:id="@+id/save_and_next_from_achivement"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_below="@+id/achivement_details"
-                android:layout_marginTop="20dp"
-                android:text="Save and Next" />
-            <Button
-                android:id="@+id/achivement_add_more"
+                android:layout_centerVertical="true"
+                android:layout_marginStart="20dp"
+                android:layout_toRightOf="@+id/achivement_back"
+                android:fontFamily="@font/montserrat"
+                android:text="Achivements"
+                android:textStyle="bold"
+                android:textColor="@color/white"
+                android:textSize="20dp"/>
+
+            <ImageButton
+                android:id="@+id/achivement_done"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_below="@+id/save_and_next_from_achivement"
-                android:layout_marginTop="20dp"
-                android:text="Add More" />
-
-
+                android:src="@drawable/done"
+                android:layout_alignParentEnd="true"
+                android:layout_marginEnd="20dp"
+                android:background="@android:color/transparent"
+                android:layout_centerVertical="true"/>
         </RelativeLayout>
 
-    </ScrollView>
+    </Toolbar>
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/achivement_recyclerview"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginVertical="20dp"
+        android:layout_below="@+id/achivement_toolbar"/>
+
+    <ImageButton
+        android:id="@+id/achivement_add_more"
+        android:layout_width="130dp"
+        android:layout_height="50dp"
+        android:layout_marginBottom="5dp"
+        android:background="@android:color/transparent"
+        android:layout_marginTop="20dp"
+        android:padding="5dp"
+        android:scaleType="centerCrop"
+        android:src="@drawable/add_button"
+        android:layout_centerHorizontal="true"
+        android:layout_alignParentBottom="true" />
 
 
 </RelativeLayout>

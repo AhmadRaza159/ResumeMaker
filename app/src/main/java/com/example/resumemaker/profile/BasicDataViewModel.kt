@@ -24,6 +24,10 @@ class BasicDataViewModel (application: Application): AndroidViewModel(applicatio
         }
     }
 
+    fun updateData(obj: BasicInfo){
+        repository.updateData(obj)
+    }
+
     fun deleteData(obj: BasicInfo){
         repository.deleteData(obj)
     }

@@ -3,15 +3,27 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="..\:/Android Projects/ResumeMaker/app/src/main/res/drawable/et_bg.xml" value="0.2203125" />
+        <entry key="..\:/Android Projects/ResumeMaker/app/src/main/res/drawable/et_bg_clr.xml" value="0.2203125" />
         <entry key="..\:/Android Projects/ResumeMaker/app/src/main/res/layout/activity_add_resume.xml" value="0.20416666666666666" />
-        <entry key="..\:/Android Projects/ResumeMaker/app/src/main/res/layout/activity_main.xml" value="0.19010416666666666" />
+        <entry key="..\:/Android Projects/ResumeMaker/app/src/main/res/layout/activity_downloaded_resumes.xml" value="0.20416666666666666" />
+        <entry key="..\:/Android Projects/ResumeMaker/app/src/main/res/layout/activity_main.xml" value="0.22" />
         <entry key="..\:/Android Projects/ResumeMaker/app/src/main/res/layout/activity_main2.xml" value="0.20416666666666666" />
         <entry key="..\:/Android Projects/ResumeMaker/app/src/main/res/layout/activity_view_resume.xml" value="0.20416666666666666" />
         <entry key="..\:/Android Projects/ResumeMaker/app/src/main/res/layout/activity_view_resume2.xml" value="0.16944444444444445" />
-        <entry key="..\:/Android Projects/ResumeMaker/app/src/main/res/layout/activity_view_template.xml" value="0.20416666666666666" />
+        <entry key="..\:/Android Projects/ResumeMaker/app/src/main/res/layout/activity_view_template.xml" value="0.25" />
         <entry key="..\:/Android Projects/ResumeMaker/app/src/main/res/layout/content_view_resume.xml" value="0.20416666666666666" />
+        <entry key="..\:/Android Projects/ResumeMaker/app/src/main/res/layout/dialog_education_get_data.xml" value="0.20416666666666666" />
+        <entry key="..\:/Android Projects/ResumeMaker/app/src/main/res/layout/dialog_experience_get_data.xml" value="0.25" />
+        <entry key="..\:/Android Projects/ResumeMaker/app/src/main/res/layout/dialog_hobby_get_data.xml" value="0.20416666666666666" />
+        <entry key="..\:/Android Projects/ResumeMaker/app/src/main/res/layout/dialog_language_get_data.xml" value="0.20416666666666666" />
+        <entry key="..\:/Android Projects/ResumeMaker/app/src/main/res/layout/dialog_project_get_data.xml" value="0.20416666666666666" />
+        <entry key="..\:/Android Projects/ResumeMaker/app/src/main/res/layout/dialog_skill_get_data.xml" value="0.140625" />
+        <entry key="..\:/Android Projects/ResumeMaker/app/src/main/res/layout/dialoge_achivement_get_data.xml" value="0.20416666666666666" />
+        <entry key="..\:/Android Projects/ResumeMaker/app/src/main/res/layout/dialoge_referance_get_data.xml" value="0.20416666666666666" />
         <entry key="..\:/Android Projects/ResumeMaker/app/src/main/res/layout/fragment_achivement.xml" value="0.18854166666666666" />
-        <entry key="..\:/Android Projects/ResumeMaker/app/src/main/res/layout/fragment_basic_info.xml" value="0.20416666666666666" />
+        <entry key="..\:/Android Projects/ResumeMaker/app/src/main/res/layout/fragment_basic_info.xml" value="0.33" />
+        <entry key="..\:/Android Projects/ResumeMaker/app/src/main/res/layout/fragment_date_picker.xml" value="0.20416666666666666" />
         <entry key="..\:/Android Projects/ResumeMaker/app/src/main/res/layout/fragment_education.xml" value="0.18854166666666666" />
         <entry key="..\:/Android Projects/ResumeMaker/app/src/main/res/layout/fragment_experience.xml" value="0.20416666666666666" />
         <entry key="..\:/Android Projects/ResumeMaker/app/src/main/res/layout/fragment_hobby.xml" value="0.20416666666666666" />
@@ -22,9 +34,12 @@
         <entry key="..\:/Android Projects/ResumeMaker/app/src/main/res/layout/fragment_second.xml" value="0.20416666666666666" />
         <entry key="..\:/Android Projects/ResumeMaker/app/src/main/res/layout/fragment_skills.xml" value="0.18854166666666666" />
         <entry key="..\:/Android Projects/ResumeMaker/app/src/main/res/layout/fragment_view_resume.xml" value="0.2" />
+        <entry key="..\:/Android Projects/ResumeMaker/app/src/main/res/layout/item_for_add_section.xml" value="0.22" />
         <entry key="..\:/Android Projects/ResumeMaker/app/src/main/res/layout/item_for_experience.xml" value="0.20416666666666666" />
-        <entry key="..\:/Android Projects/ResumeMaker/app/src/main/res/layout/item_for_profile_viewholder.xml" value="0.159375" />
+        <entry key="..\:/Android Projects/ResumeMaker/app/src/main/res/layout/item_for_profile_viewholder.xml" value="0.33" />
+        <entry key="..\:/Android Projects/ResumeMaker/app/src/main/res/layout/pdf_namer.xml" value="0.20416666666666666" />
         <entry key="..\:/Android Projects/ResumeMaker/app/src/main/res/layout/splash_screen.xml" value="0.20416666666666666" />
+        <entry key="..\:/Android Projects/ResumeMaker/app/src/main/res/mipmap-anydpi-v26/ic_launcher.xml" value="0.203125" />
       </map>
     </option>
   </component>

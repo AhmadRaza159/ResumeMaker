@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="wrap_content"
+    android:background="@drawable/et_bg"
+    android:layout_height="wrap_content">
+
+    <ScrollView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content">
+
+        <RelativeLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:elevation="5dp"
+            android:paddingVertical="5dp">
+
+
+            <EditText
+                android:id="@+id/skill_title"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginHorizontal="15dp"
+                android:paddingHorizontal="10dp"
+                android:textSize="16dp"
+                android:background="@drawable/et_bg_clr"
+                android:elevation="3dp"
+                android:hint="Skill" />
+            <RelativeLayout
+                android:id="@+id/skill_upper"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/skill_title"
+                android:layout_marginTop="10dp"
+                android:layout_marginHorizontal="15dp"
+                android:gravity="center"
+
+                >
+
+                <Button
+                    android:id="@+id/skill_poor"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentStart="true"
+                    android:backgroundTint="#FF888888"
+                    android:text="Poor"
+                    android:textColor="@color/white"
+                    android:textSize="10dp"
+                    android:textStyle="bold" />
+                <Button
+                    android:id="@+id/skill_good"
+                    android:layout_toRightOf="@+id/skill_poor"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textColor="@color/white"
+                    android:textSize="10dp"
+                    android:textStyle="bold"
+                    android:layout_marginStart="5dp"
+                    android:text="Good"
+                    android:backgroundTint="#FF888888"/>
+                <Button
+                    android:id="@+id/skill_excellent"
+                    android:layout_toRightOf="@+id/skill_good"
+                    android:layout_width="wrap_content"
+                    android:layout_marginStart="5dp"
+                    android:layout_height="wrap_content"
+                    android:textColor="@color/white"
+                    android:textSize="10dp"
+                    android:textStyle="bold"
+                    android:text="Excellent"
+                    android:backgroundTint="#FF888888"/>
+
+            </RelativeLayout>
+
+
+
+
+
+
+            <ImageButton
+                android:id="@+id/skill_save"
+                android:layout_width="130dp"
+                android:layout_height="50dp"
+                android:layout_marginBottom="5dp"
+                android:background="@android:color/transparent"
+                android:layout_marginTop="20dp"
+                android:padding="5dp"
+                android:scaleType="centerCrop"
+                android:src="@drawable/save_button"
+                android:layout_centerHorizontal="true"
+                android:layout_below="@+id/skill_upper"
+                android:text="Save" />
+
+
+
+        </RelativeLayout>
+
+    </ScrollView>
+
+</RelativeLayout>

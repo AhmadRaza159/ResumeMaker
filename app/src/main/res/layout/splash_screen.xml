@@ -4,24 +4,48 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".SplashScreenActivity">
-    <LinearLayout
+    tools:context=".SplashScreenActivity"
+    android:background="@drawable/ssbackground">
+
+    <ImageView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_marginLeft="-20dp"
+        android:scaleType="centerCrop"
+        android:src="@drawable/ssuper" />
+
+    <ImageView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:src="@drawable/ssbottom"
+        android:scaleType="centerCrop"
+        android:layout_marginBottom="-30dp"
+        android:layout_alignParentBottom="true"/>
+
+    <ImageView
+        android:id="@+id/ssicon"
+        android:layout_width="310dp"
+        android:layout_height="310dp"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="200dp"
+        android:padding="10dp"
+        android:scaleType="centerCrop"
+        android:src="@drawable/ssicon" />
+
+    <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_below="@+id/ssicon"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="20dp"
         android:gravity="center"
-        android:layout_centerInParent="true"
-        android:orientation="vertical">
-
-
-        <ImageView
-            android:layout_width="150dp"
-            android:layout_height="150dp"
-            android:src="@mipmap/ic_launcher"/>
-        <ProgressBar
-            android:layout_width="50dp"
-            android:layout_height="50dp"/>
-
-    </LinearLayout>
+        android:fontFamily="@font/montserrat"
+        android:lineHeight="25dp"
+        android:text="Professional Resume Builder\nCV Resume Templates"
+        android:textColor="@color/white"
+        android:textSize="18dp"
+        android:textStyle="bold" />
 
 
 </RelativeLayout>

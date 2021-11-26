@@ -4,6 +4,7 @@ import android.app.Application
 import androidx.lifecycle.AndroidViewModel
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.viewModelScope
+import com.example.resumemaker.hobbies.Hobby
 import com.example.resumemaker.profile.BasicInfoDatabase
 import com.example.resumemaker.referances.Referance
 import kotlinx.coroutines.Dispatchers
@@ -23,5 +24,12 @@ class AchivementViewModelForWriting (application: Application): AndroidViewModel
         viewModelScope.launch(Dispatchers.IO) {
             repository.addAchivement(achivement)
         }
+    }
+    fun updateData(obj: Achivement){
+        repository.updateData(obj)
+    }
+
+    fun getSpecificObj(id: String): LiveData<List<Achivement>>{
+        return repository.readAllDat(id)
     }
 }

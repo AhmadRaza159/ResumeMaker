@@ -1,0 +1,153 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:background="@drawable/et_bg">
+
+    <ScrollView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content">
+        <RelativeLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:elevation="5dp"
+            android:paddingVertical="5dp">
+
+
+
+
+            <EditText
+                android:id="@+id/experience_title"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginHorizontal="15dp"
+                android:paddingHorizontal="10dp"
+                android:textSize="16dp"
+                android:background="@drawable/et_bg_clr"
+                android:elevation="3dp"
+                android:hint="Position" />
+
+            <EditText
+                android:id="@+id/experience_company"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:layout_marginHorizontal="15dp"
+                android:layout_marginTop="10dp"
+                android:paddingHorizontal="10dp"
+                android:textSize="16dp"
+                android:background="@drawable/et_bg_clr"
+                android:elevation="3dp"
+                android:layout_below="@+id/experience_title"
+                android:hint="Company" />
+
+            <EditText
+                android:id="@+id/experience_city"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:layout_marginHorizontal="15dp"
+                android:layout_marginTop="10dp"
+                android:paddingHorizontal="10dp"
+                android:textSize="16dp"
+                android:background="@drawable/et_bg_clr"
+                android:elevation="3dp"
+                android:layout_below="@+id/experience_company"
+                android:hint="City" />
+
+            <Button
+                android:id="@+id/experience_start_date"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:layout_below="@+id/experience_city"
+                android:layout_marginHorizontal="15dp"
+                android:layout_marginTop="10dp"
+                android:background="@drawable/et_bg_clr"
+                android:editable="false"
+                android:elevation="3dp"
+                android:gravity="left|center"
+                android:hint="Start Date"
+                android:paddingHorizontal="10dp"
+                android:textAllCaps="false"
+                android:textColor="@android:color/darker_gray"
+                android:textSize="15dp"
+                app:backgroundTint="#F5F5F5" />
+
+            <LinearLayout
+                android:id="@+id/experience_last_date_upper"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:orientation="horizontal"
+                android:layout_marginHorizontal="15dp"
+                android:layout_marginTop="10dp"
+                android:layout_below="@+id/experience_start_date"
+                android:weightSum="5">
+
+
+            <Button
+                android:id="@+id/experience_end_date"
+                android:layout_width="0dp"
+                android:layout_weight="4.5"
+                android:layout_height="match_parent"
+                android:background="@drawable/et_bg_clr"
+                android:editable="false"
+                android:elevation="3dp"
+                android:gravity="left|center"
+                android:hint="End Date"
+                android:paddingHorizontal="10dp"
+                android:textAllCaps="false"
+                android:textColor="@android:color/darker_gray"
+                android:textSize="15dp"
+                app:backgroundTint="#F5F5F5"/>
+            <Button
+                android:id="@+id/experience_end_date_peresent"
+                android:layout_toRightOf="@+id/experience_end_date"
+                android:layout_width="wrap_content"
+                android:layout_marginStart="10dp"
+                android:layout_weight="0.5"
+                android:layout_height="match_parent"
+                android:textColor="@color/white"
+                android:textSize="10dp"
+                android:textStyle="bold"
+                android:text="Present"
+                android:backgroundTint="#FF888888"/>
+
+            </LinearLayout>
+            <EditText
+                android:id="@+id/experience_detail"
+                android:layout_width="match_parent"
+                android:layout_height="100dp"
+                android:layout_below="@id/experience_last_date_upper"
+                android:layout_marginHorizontal="15dp"
+                android:layout_marginTop="10dp"
+                android:background="@drawable/et_bg_clr"
+                android:elevation="3dp"
+                android:gravity="start|top"
+                android:hint="Details"
+                android:inputType="textMultiLine"
+                android:padding="10dp"
+                android:singleLine="false"
+                android:textSize="16dp" />
+
+
+
+            <ImageButton
+                android:layout_below="@+id/experience_detail"
+                android:id="@+id/save_and_next_from_experience"
+                android:layout_width="130dp"
+                android:layout_height="50dp"
+                android:layout_marginBottom="5dp"
+                android:background="@android:color/transparent"
+                android:layout_marginTop="20dp"
+                android:padding="5dp"
+                android:scaleType="centerCrop"
+                android:src="@drawable/save_button"
+                android:layout_centerHorizontal="true"/>
+
+
+
+
+        </RelativeLayout>
+    </ScrollView>
+
+</RelativeLayout>

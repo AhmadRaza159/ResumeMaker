@@ -2,6 +2,7 @@ package com.example.resumemaker.languages
 
 import androidx.lifecycle.LiveData
 import androidx.room.*
+import com.example.resumemaker.achivements.Achivement
 import com.example.resumemaker.skills.Skill
 
 @Dao
@@ -13,4 +14,7 @@ interface LanguageDao {
 
     @Delete
     fun delete(model:Language)
+
+    @Update
+    fun updateData(model: Language)
 }

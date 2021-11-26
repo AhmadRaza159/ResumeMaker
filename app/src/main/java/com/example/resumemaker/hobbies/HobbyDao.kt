@@ -2,6 +2,7 @@ package com.example.resumemaker.hobbies
 
 import androidx.lifecycle.LiveData
 import androidx.room.*
+import com.example.resumemaker.achivements.Achivement
 import com.example.resumemaker.experience.Experience
 @Dao
 interface HobbyDao {
@@ -13,4 +14,7 @@ interface HobbyDao {
 
     @Delete
     fun delete(model: Hobby)
+
+    @Update
+    fun updateData(model: Hobby)
 }

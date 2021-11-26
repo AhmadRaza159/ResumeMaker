@@ -2,6 +2,7 @@ package com.example.resumemaker.projects
 
 import androidx.lifecycle.LiveData
 import androidx.room.*
+import com.example.resumemaker.achivements.Achivement
 import com.example.resumemaker.skills.Skill
 
 @Dao
@@ -13,4 +14,7 @@ interface ProjectDao {
 
     @Delete
     fun delete(model:Project)
+
+    @Update
+    fun updateData(model: Project)
 }

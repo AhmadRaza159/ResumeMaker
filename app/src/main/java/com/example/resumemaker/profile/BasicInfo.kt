@@ -16,8 +16,11 @@ data class BasicInfo(
     val linkedin:String,
     val gmail:String,
     val phone:String,
-    val dob:String): Parcelable {
+    val dob:String,
+    val imgPath:String
+): Parcelable {
     constructor(parcel: Parcel) : this(
+        parcel.readString()!!,
         parcel.readString()!!,
         parcel.readString()!!,
         parcel.readString()!!,
@@ -40,6 +43,7 @@ data class BasicInfo(
         parcel.writeString(gmail)
         parcel.writeString(phone)
         parcel.writeString(dob)
+        parcel.writeString(imgPath)
     }
 
     override fun describeContents(): Int {

@@ -5,51 +5,76 @@
     android:layout_height="match_parent">
 
 
-    <ScrollView
+    <ImageView
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
+        android:layout_height="match_parent"
+        android:src="@drawable/mainsbackground"
+        android:layout_marginTop="40dp"
+
+        android:scaleType="centerCrop"/>
+    <Toolbar
+        android:id="@+id/language_toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="55dp"
+        android:background="@color/purple_200">
 
         <RelativeLayout
             android:layout_width="match_parent"
-            android:layout_height="match_parent">
-
-
-            <EditText
-                android:id="@+id/lang_title"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="10dp"
-                android:hint="Language" />
-
-            <EditText
-                android:id="@+id/lang_level"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_below="@+id/lang_title"
-                android:layout_marginTop="10dp"
-                android:hint="Level" />
-
-
-            <Button
-                android:id="@+id/save_and_next_from_language"
+            android:layout_height="match_parent"
+            >
+            <ImageButton
+                android:id="@+id/language_back"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_below="@+id/lang_level"
-                android:layout_marginTop="20dp"
-                android:text="Save and Next" />
+                android:src="@drawable/arrow"
+                android:background="@android:color/transparent"
+                android:layout_centerVertical="true"/>
 
-            <Button
-                android:id="@+id/language_add_more"
+            <TextView
+                android:id="@+id/language_title"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_below="@+id/save_and_next_from_language"
-                android:layout_marginTop="20dp"
-                android:text="Add More" />
+                android:layout_centerVertical="true"
+                android:layout_marginStart="20dp"
+                android:layout_toRightOf="@+id/language_back"
+                android:fontFamily="@font/montserrat"
+                android:text="Languages"
+                android:textStyle="bold"
+                android:textColor="@color/white"
+                android:textSize="20dp"/>
 
-
+            <ImageButton
+                android:id="@+id/language_done"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/done"
+                android:layout_alignParentEnd="true"
+                android:layout_marginEnd="20dp"
+                android:background="@android:color/transparent"
+                android:layout_centerVertical="true"/>
         </RelativeLayout>
 
-    </ScrollView>
+    </Toolbar>
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/language_recyclerview"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginVertical="20dp"
+        android:layout_below="@+id/language_toolbar"
+        />
+    <ImageButton
+        android:id="@+id/language_add_more"
+        android:layout_width="130dp"
+        android:layout_height="50dp"
+        android:layout_marginBottom="5dp"
+        android:background="@android:color/transparent"
+        android:layout_marginTop="20dp"
+        android:padding="5dp"
+        android:scaleType="centerCrop"
+        android:src="@drawable/add_button"
+        android:layout_centerHorizontal="true"
+        android:layout_alignParentBottom="true" />
 
 
 </RelativeLayout>

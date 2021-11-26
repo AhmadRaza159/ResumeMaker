@@ -2,6 +2,7 @@ package com.example.resumemaker.experience
 
 import androidx.lifecycle.LiveData
 import androidx.room.*
+import com.example.resumemaker.achivements.Achivement
 import com.example.resumemaker.objectives.Objective
 
 @Dao
@@ -14,4 +15,7 @@ interface ExperienceDao {
 
     @Delete
     fun delete(model:Experience)
+
+    @Update
+    fun updateData(model: Experience)
 }

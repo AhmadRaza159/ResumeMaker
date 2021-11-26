@@ -5,6 +5,7 @@ import androidx.lifecycle.AndroidViewModel
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.viewModelScope
 import com.example.resumemaker.achivements.Achivement
+import com.example.resumemaker.hobbies.Hobby
 import com.example.resumemaker.profile.BasicInfoDatabase
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
@@ -23,4 +24,16 @@ class ObjectiveViewModelForWriting(application: Application): AndroidViewModel(a
     fun deleteData(obj: Objective){
         repository.deleteData(obj)
     }
+
+    fun updateData(obj:Objective){
+        repository.updateData(obj)
+    }
+
+    fun getSpecificObj(id: String): LiveData<List<Objective>>{
+        return repository.readAllDat(id)
+
+
+    }
+
+
 }

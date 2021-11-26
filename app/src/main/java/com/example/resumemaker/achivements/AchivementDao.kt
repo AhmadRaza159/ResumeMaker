@@ -13,4 +13,7 @@ interface AchivementDao {
 
     @Delete
     fun delete(model: Achivement)
+
+    @Update
+    fun updateData(model: Achivement)
 }

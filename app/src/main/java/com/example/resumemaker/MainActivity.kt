@@ -1,6 +1,8 @@
 package com.example.resumemaker
 
+import android.R.attr
 import android.content.Intent
+import android.net.Uri
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import androidx.lifecycle.Observer
@@ -38,6 +40,19 @@ import com.example.resumemaker.skills.Skill
 import com.example.resumemaker.skills.SkillViewModelForReading
 import com.example.resumemaker.skills.SkillViewModelForWriting
 import com.google.android.material.floatingactionbutton.FloatingActionButton
+import java.io.File
+import android.R.attr.data
+import android.view.View
+import android.widget.ImageButton
+import android.widget.ImageView
+import android.widget.Toast
+import com.example.resumemaker.downloaded_resumes.DownloadedResumeAdapter
+import com.example.resumemaker.downloaded_resumes.DownloadedResumesActivity
+import kotlinx.coroutines.Dispatchers
+import kotlinx.coroutines.GlobalScope
+import kotlinx.coroutines.async
+import kotlinx.coroutines.launch
+
 
 class MainActivity : AppCompatActivity() {
     private lateinit var basicDataViewModel: BasicDataViewModel
@@ -63,6 +78,9 @@ class MainActivity : AppCompatActivity() {
 
     lateinit var adapter:ProfileAdapter
 
+    lateinit var emptyFlag:ImageView
+    lateinit var menuButton:ImageButton
+    lateinit var downloadsButton:ImageButton
     lateinit var addProfileButton:FloatingActionButton
     lateinit var recyclerview: RecyclerView
     var listOfProfile= ArrayList<BasicInfo>()
@@ -73,21 +91,50 @@ class MainActivity : AppCompatActivity() {
         setContentView(R.layout.activity_main)
         findIds()
         factory()
+
+
     }
 
     private fun factory() {
         addProfileButton.setOnClickListener{
             var intent= Intent(this,AddResumeActivity::class.java)
+            var obj=BasicInfo("emp","emp","emp","emp","emp","emp","emp","emp","emp","emp")
+            intent.putExtra("code","add")
+            intent.putExtra("obj",obj)
             startActivity(intent)
 
         }
+        /////////////////////////////////////////////////////////
+        downloadsButton.setOnClickListener {
+            var intent= Intent(this,DownloadedResumesActivity::class.java)
+            startActivity(intent)
+        }
+
+
+
+        ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+
+
+
 
         basicDataViewModel.readAllData.observe(this, Observer { basicInfo->
+            if(listOfProfile.size!=0){
+                listOfProfile.clear()
+            }
             for(value in basicInfo){
                 listOfProfile.add(value)
             }
+            emptyFlag.visibility= if (listOfProfile.size!=0) View.GONE else View.VISIBLE
+
+
+
+
+
+
             adapter=ProfileAdapter(listOfProfile, object : MyInterfaceForView{
                 override fun onClick(obj1: BasicInfo) {
+                    println("sss"+ obj1.imgPath)
                     var listOfObjectivesObj=ArrayList<Objective>()
                     var listOfExperiencesObj=ArrayList<Experience>()
                     var listOfSkillsObj=ArrayList<Skill>()
@@ -97,6 +144,7 @@ class MainActivity : AppCompatActivity() {
                     var listOfLanguagesObj=ArrayList<Language>()
                     var listOfReferancesObj=ArrayList<Referance>()
                     var listOfHobbiesObj=ArrayList<Hobby>()
+
 
                     reInitializeViewModels(obj1.id)
                     objectiveViewModelForReading.readAllData.observe(this@MainActivity,Observer{ obj->
@@ -164,27 +212,6 @@ class MainActivity : AppCompatActivity() {
                             })
                         })
                     })
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-                    //startActivity(Intent(this@MainActivity, MainActivity::class.java))
-
-                    //finish()
-
-
-
                 }
             }, object: MyInterfaceForDelete{
                 override fun onClick(obj: BasicInfo) {
@@ -256,14 +283,25 @@ class MainActivity : AppCompatActivity() {
                     })
 
                     basicDataViewModel.deleteData(obj)
-                    listOfProfile.remove(obj)
-                    adapter.profileList=listOfProfile
-                    adapter.notifyDataSetChanged()
+                   // listOfProfile.remove(obj)
+                    //adapter.profileList=listOfProfile
+                    //adapter.notifyDataSetChanged()
 
 
                 }
 
-            })
+            }, object :MyInterfaceForEdit{
+                override fun onClick(obj: BasicInfo) {
+                    var intent= Intent(this@MainActivity,AddResumeActivity::class.java)
+                    intent.putExtra("code","edit")
+                    intent.putExtra("obj",obj)
+                    startActivity(intent)
+                    Toast.makeText(this@MainActivity,"Reach",Toast.LENGTH_SHORT).show()
+
+                }
+
+            }
+            )
             recyclerview.adapter=adapter
 
         })
@@ -287,6 +325,9 @@ class MainActivity : AppCompatActivity() {
 
 
         addProfileButton=findViewById(R.id.add_new_resume)
+        emptyFlag=findViewById(R.id.main_empty)
+        menuButton=findViewById(R.id.main_menu)
+        downloadsButton=findViewById(R.id.main_download)
 
         recyclerview=findViewById(R.id.recycler_view_of_profiles)
         recyclerview.layoutManager= GridLayoutManager(applicationContext,1)
